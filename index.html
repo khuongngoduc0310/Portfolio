@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyle Ngo | Portfolio</title>
+    <meta name="description"
+        content="Portfolio of Khuong Ngo, a Computer Science student at Missouri State University specializing in AI, Multithreading, and Backend systems.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">KN</div>
+                <ul>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#about">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Kyle Ngo</h1>
+                <p>Computer Science student at Missouri State University. Focused on building high-performance AI
+                    agents, real-time communication systems, and concurrent applications.</p>
+                <div class="hero-links">
+                    <a href="https://github.com/khuongngoduc0310" class="btn btn-primary">GitHub</a>
+                    <a href="https://www.linkedin.com/in/khuongngo0310/" class="btn btn-outline">LinkedIn</a>
+                    <a href="#contact" class="btn btn-outline">Message Me</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2 class="section-title">Selected Projects</h2>
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="assets/meet_summarizer.png" alt="MeetSummarizer Preview">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="tag">Transformers.js</span>
+                                <span class="tag">WebGPU</span>
+                                <span class="tag">WebRTC</span>
+                            </div>
+                            <h3>MeetSummarizer</h3>
+                            <p class="project-desc">A Speech-to-Text pipeline using Transformers.js and WebGPU for
+                                near-instant transcription. Implemented sliding-window audio buffers and WebRTC for
+                                low-latency P2P streaming with a privacy-by-design architecture.</p>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="assets/flappy_bird_ai.png" alt="Flappy Bird AI Preview">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Neural Networks</span>
+                                <span class="tag">p5.js</span>
+                            </div>
+                            <h3>Flappy Bird AI Agent</h3>
+                            <p class="project-desc">Autonomous Flappy Bird agent trained using genetic algorithms and
+                                neural networks. Features configurable evolution controls for population size, mutation
+                                rate, and network architecture for optimized learning stability.</p>
+                        </div>
+                    </article>
+
+                    <!-- Project 3 -->
+                    <article class="project-card">
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="tag">Java</span>
+                                <span class="tag">WebSocket</span>
+                                <span class="tag">SQL</span>
+                            </div>
+                            <h3>IMessage Website</h3>
+                            <p class="project-desc">Collaborative real-time messaging and audio calling platform. Built
+                                a custom system to process audio signals through a Java-based WebSocket server with an
+                                optimized project database.</p>
+                        </div>
+                    </article>
+
+                    <!-- Project 4 (No Image) -->
+                    <article class="project-card">
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="tag">C#/.NET</span>
+                                <span class="tag">SQL Server</span>
+                                <span class="tag">Multithreading</span>
+                            </div>
+                            <h3>Inventory Management System</h3>
+                            <p class="project-desc">Multithreaded desktop application with ACID-compliant SQL Server
+                                transactions. Supports high concurrency with fine-grained locking and features real-time
+                                dashboards with optimized UI update pipelines.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="surface">
+            <div class="container">
+                <div class="about-grid">
+                    <div>
+                        <h2 class="section-title">Education</h2>
+                        <div class="education-item">
+                            <div class="edu-header">
+                                <h3>Missouri State University</h3>
+                                <span class="edu-date">2022 — 2026</span>
+                            </div>
+                            <p>B.S. in Computer Science | GPA: 3.82/4.0</p>
+                            <p class="project-desc">Dean's List: 2023, 2024, 2025. Relevant Coursework: Data Structures
+                                & Algorithms, Artificial Intelligence, Big Data, Computer Networks.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="section-title">Technical Skills</h2>
+                        <div class="skill-category">
+                            <h4>Languages</h4>
+                            <div class="skill-list">
+                                <span class="tag">Python</span>
+                                <span class="tag">Java</span>
+                                <span class="tag">C++</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">C#</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Frameworks & Tools</h4>
+                            <div class="skill-list">
+                                <span class="tag">Node.js</span>
+                                <span class="tag">Django</span>
+                                <span class="tag">.NET WinForms</span>
+                                <span class="tag">TensorFlow</span>
+                                <span class="tag">Git</span>
+                                <span class="tag">Apache Tomcat</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Backend & Systems</h4>
+                            <div class="skill-list">
+                                <span class="tag">Multithreading</span>
+                                <span class="tag">WebSocket</span>
+                                <span class="tag">TCP/IP</span>
+                                <span class="tag">SQL Server</span>
+                                <span class="tag">MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-title">Contact</h2>
+                <p>I'm currently looking for new opportunities and collaborations. Feel free to reach out!</p>
+                <div class="hero-links" style="margin-top: 2rem;">
+                    <a href="mailto:khuongngo0310@gmail.com" class="btn btn-primary">Email Me</a>
+                    <a href="https://www.linkedin.com/in/khuongngo0310/" class="btn btn-outline">LinkedIn</a>
+                    <a href="https://github.com/khuongngoduc0310" class="btn btn-outline">GitHub</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Khuong Ngo. Built with precision and simplicity.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

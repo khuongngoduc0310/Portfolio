@@ -585,13 +585,13 @@ h3 {
 }
 
 .diagram-meet {
-    --diagram-min-width: 640px;
-    --diagram-ratio: 2.22;
+    --diagram-min-width: 1420px;
+    --diagram-ratio: 2.99;
 }
 
 .diagram-flappy {
-    --diagram-min-width: 820px;
-    --diagram-ratio: 1.53;
+    --diagram-min-width: 1370px;
+    --diagram-ratio: 7.65;
 }
 
 .diagram-pi {

@@ -1,6 +1,5 @@
 {
   "theme": "base",
-  "layout": "elk",
   "look": "classic",
   "flowchart": {
     "htmlLabels": false,
@@ -11,19 +10,6 @@
   },
   "block": {
     "padding": 14
-  },
-  "sequence": {
-    "diagramMarginX": 30,
-    "diagramMarginY": 12,
-    "actorMargin": 40,
-    "width": 140,
-    "height": 48,
-    "boxMargin": 8,
-    "boxTextMargin": 5,
-    "noteMargin": 10,
-    "messageMargin": 28,
-    "mirrorActors": false,
-    "useMaxWidth": false
   },
   "themeVariables": {
     "background": "#0b0e14",

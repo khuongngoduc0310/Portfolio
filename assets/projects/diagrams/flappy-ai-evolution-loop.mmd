@@ -1,0 +1,22 @@
+%% Source: Flappy Bird AI README neuroevolution system overview.
+sequenceDiagram
+    accTitle: Flappy Bird AI neuroevolution loop
+    accDescr: Each population plays until all birds die, then fitness scores drive selection, crossover, mutation, and elitism for the next generation.
+
+    participant P as Population
+    participant G as Game simulation
+    participant F as Fitness
+    participant E as Evolution
+
+    loop Each generation
+        E->>P: Spawn random or evolved brains
+        loop Until all birds die
+            P->>G: 5 inputs -> network -> flap
+            G-->>P: Frame state + survival
+        end
+        G->>F: Final survival frames
+        F->>E: Ranked fitness scores
+        E->>E: Select top 5% distinct parents
+        E->>E: Crossover + mutation
+        E-->>P: Preserve elite and restart
+    end

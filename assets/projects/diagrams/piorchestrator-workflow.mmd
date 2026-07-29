@@ -1,0 +1,42 @@
+%% Source: piOrchestrator README workflow routes and reliability policy.
+block-beta
+    columns 6
+    REQUEST["Request<br/>Route + acceptance"]
+    EXPLORE["Explorer<br/>Read-only context"]
+    PLAN["Planner<br/>Task graph"]
+    PLAN_GATE{"Plan approved?"}
+    REPORT["Read-only route<br/>Report, no mutation"]
+    space
+    space
+    BASELINE["Mutation route<br/>Green baseline"]
+    BUILD["Scoped test + build<br/>Role-limited tools"]
+    CHECKS["Saved checks<br/>Verify workspace"]
+    REVIEW{"Code review<br/>approved?"}
+    STOP["Revision limit<br/>Stop safely"]
+    space
+    space
+    SYNC["Validate + sync<br/>Durable checkpoint"]
+    DOCS["Approved<br/>Docs + final checks"]
+    FIX["Changes requested<br/>Builder fixes"]
+    space
+
+    REQUEST --> EXPLORE
+    EXPLORE --> PLAN
+    PLAN --> PLAN_GATE
+    PLAN_GATE --> REPORT
+    PLAN_GATE --> BASELINE
+    BASELINE --> BUILD
+    BUILD --> CHECKS
+    CHECKS --> REVIEW
+    REVIEW --> DOCS
+    DOCS --> SYNC
+    REVIEW --> STOP
+    REVIEW --> FIX
+    FIX --> CHECKS
+
+    classDef gate fill:#171d2c,stroke:#3157ff,stroke-width:3px,color:#f7f7f2
+    classDef success fill:#182016,stroke:#b9ff32,stroke-width:2px,color:#f7f7f2
+    classDef action fill:#10242a,stroke:#00d9e8,stroke-width:2px,color:#f7f7f2
+    class PLAN_GATE,REVIEW gate
+    class BASELINE,CHECKS,SYNC success
+    class BUILD,FIX action

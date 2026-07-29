@@ -1,0 +1,25 @@
+%% Source: SummarizerApp README system architecture.
+block-beta
+    columns 3
+    LOCAL["Local speech inference<br/>Whisper.cpp: CPU or Vulkan<br/>WebGPU fallback"]
+    UI["Electron + React UI<br/>Video, captions, summaries"]
+    RTC["WebRTC mesh<br/>Peer-to-peer media"]
+    space
+    MAIN["Electron main process<br/>Audio + process lifecycle"]
+    API["Express + Socket.io<br/>Signaling and captions"]
+    space
+    space
+    DB[("PostgreSQL<br/>Transcripts and summaries")]
+
+    LOCAL <--> MAIN
+    MAIN <--> UI
+    UI <--> RTC
+    UI <--> API
+    API --> DB
+
+    classDef core fill:#171d2c,stroke:#3157ff,stroke-width:3px,color:#f7f7f2
+    classDef local fill:#10242a,stroke:#00d9e8,stroke-width:2px,color:#f7f7f2
+    classDef data fill:#182016,stroke:#b9ff32,stroke-width:2px,color:#f7f7f2
+    class UI,MAIN,API core
+    class LOCAL,RTC local
+    class DB data

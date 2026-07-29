@@ -537,6 +537,7 @@ h3 {
 
 .project-media img {
     width: 100%;
+    height: auto;
     aspect-ratio: 16 / 9;
     padding: clamp(0.5rem, 1.5vw, 1rem);
     object-fit: contain;
@@ -596,7 +597,7 @@ h3 {
 
 .project-copy h3 {
     margin-bottom: 1.5rem;
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-size: clamp(2.5rem, 3.5vw, 3rem);
 }
 
 .project-lead {

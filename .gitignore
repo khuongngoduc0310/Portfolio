@@ -3,4 +3,5 @@ resume2.pdf
 resume.pdf
 *.docx
 *.pdf
+!resume2.pdf
 .gemini/

@@ -1,191 +1,435 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kyle Ngo | Portfolio</title>
-    <meta name="description"
-        content="Portfolio of Khuong Ngo, a Computer Science student at Missouri State University specializing in AI, Multithreading, and Backend systems.">
-    <link rel="stylesheet" href="style.css">
+    <title>Khuong "Kyle" Ngo | Software Engineer</title>
+    <meta name="description" content="Portfolio of Khuong 'Kyle' Ngo, a recent Computer Science graduate building real-time AI, concurrent applications, and backend systems.">
+    <meta name="theme-color" content="#f3f1eb">
+    <link rel="canonical" href="https://khuongngoduc0310.github.io/Portfolio/">
+
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Khuong 'Kyle' Ngo | Software Engineer">
+    <meta property="og:description" content="Real-time AI, concurrent applications, and backend systems engineered with care.">
+    <meta property="og:url" content="https://khuongngoduc0310.github.io/Portfolio/">
+    <meta property="og:image" content="https://khuongngoduc0310.github.io/Portfolio/assets/social-preview.png">
+    <meta property="og:image:alt" content="Khuong Kyle Ngo, software engineer portfolio">
+    <meta property="profile:first_name" content="Khuong">
+    <meta property="profile:last_name" content="Ngo">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Khuong 'Kyle' Ngo | Software Engineer">
+    <meta name="twitter:description" content="Real-time AI, concurrent applications, and backend systems engineered with care.">
+    <meta name="twitter:image" content="https://khuongngoduc0310.github.io/Portfolio/assets/social-preview.png">
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="style.css">
 
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "mainEntity": {
+            "@type": "Person",
+            "name": "Khuong Ngo",
+            "alternateName": "Kyle Ngo",
+            "url": "https://khuongngoduc0310.github.io/Portfolio/",
+            "email": "mailto:khuongngo0310@gmail.com",
+            "jobTitle": "Software Engineer",
+            "alumniOf": {
+                "@type": "CollegeOrUniversity",
+                "name": "Missouri State University"
+            },
+            "sameAs": [
+                "https://github.com/khuongngoduc0310",
+                "https://www.linkedin.com/in/khuongngo0310/"
+            ]
+        }
+    }
+    </script>
+</head>
 <body>
-    <header>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
         <div class="container">
-            <nav>
-                <div class="logo">KN</div>
-                <ul>
-                    <li><a href="#projects">Projects</a></li>
+            <nav class="site-nav" aria-label="Primary navigation">
+                <a class="brand" href="#top" aria-label="Khuong Ngo, back to top">
+                    <span aria-hidden="true">K/N</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#work">Work</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#about">Skills</a></li>
+                    <li><a href="#skills">Skills</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
+                <a class="nav-resume" href="resume2.pdf" download="Khuong-Kyle-Ngo-Resume.pdf">Resume <span aria-hidden="true">&#8599;</span></a>
             </nav>
         </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="container">
-                <h1>Kyle Ngo</h1>
-                <p>Computer Science student at Missouri State University. Focused on building high-performance AI
-                    agents, real-time communication systems, and concurrent applications.</p>
-                <div class="hero-links">
-                    <a href="https://github.com/khuongngoduc0310" class="btn btn-primary">GitHub</a>
-                    <a href="https://www.linkedin.com/in/khuongngo0310/" class="btn btn-outline">LinkedIn</a>
-                    <a href="#contact" class="btn btn-outline">Message Me</a>
+    <main id="main-content">
+        <section class="hero" id="top" aria-labelledby="hero-title">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Available for software engineering roles</p>
+                    <h1 id="hero-title">Khuong <span>"Kyle"</span> Ngo</h1>
+                    <p class="hero-role">Recent computer science graduate building real-time AI and concurrent software systems.</p>
+                    <p class="hero-intro">I turn complex system constraints into software that stays responsive, private, and reliable.</p>
+                    <div class="hero-actions">
+                        <a class="button button-primary" href="#work">Explore selected work <span aria-hidden="true">&#8595;</span></a>
+                        <a class="button button-secondary" href="resume2.pdf" download="Khuong-Kyle-Ngo-Resume.pdf">Download resume</a>
+                    </div>
+                    <ul class="social-links" aria-label="Professional profiles">
+                        <li><a href="https://github.com/khuongngoduc0310">GitHub <span aria-hidden="true">&#8599;</span></a></li>
+                        <li><a href="https://www.linkedin.com/in/khuongngo0310/">LinkedIn <span aria-hidden="true">&#8599;</span></a></li>
+                        <li><a href="mailto:khuongngo0310@gmail.com">Email <span aria-hidden="true">&#8599;</span></a></li>
+                    </ul>
+                </div>
+
+                <aside class="profile-index" aria-label="Profile summary">
+                    <div class="index-header">
+                        <span>PROFILE.INDEX</span>
+                        <span>2026</span>
+                    </div>
+                    <dl>
+                        <div>
+                            <dt>Education</dt>
+                            <dd>B.S. Computer Science</dd>
+                        </div>
+                        <div>
+                            <dt>University</dt>
+                            <dd>Missouri State</dd>
+                        </div>
+                        <div>
+                            <dt>GPA</dt>
+                            <dd>3.82 / 4.00</dd>
+                        </div>
+                        <div>
+                            <dt>Focus 01</dt>
+                            <dd>Real-time AI</dd>
+                        </div>
+                        <div>
+                            <dt>Focus 02</dt>
+                            <dd>Concurrent systems</dd>
+                        </div>
+                        <div>
+                            <dt>Focus 03</dt>
+                            <dd>Backend engineering</dd>
+                        </div>
+                    </dl>
+                    <p class="index-footer">Seeking teams that care about the details beneath the interface.</p>
+                </aside>
+            </div>
+        </section>
+
+        <section class="proof-strip" aria-label="Selected engineering results">
+            <div class="container proof-grid">
+                <div class="proof-item">
+                    <strong>3.82</strong>
+                    <span>Computer science GPA</span>
+                </div>
+                <div class="proof-item">
+                    <strong>5+</strong>
+                    <span>Concurrent inventory users</span>
+                </div>
+                <div class="proof-item">
+                    <strong>3 sec</strong>
+                    <span>STT window overlap</span>
+                </div>
+                <div class="proof-item">
+                    <strong>Local</strong>
+                    <span>Privacy-first speech inference</span>
                 </div>
             </div>
         </section>
 
-        <section id="projects">
+        <section class="work-section" id="work" aria-labelledby="work-title">
             <div class="container">
-                <h2 class="section-title">Selected Projects</h2>
-                <div class="projects-grid">
-                    <!-- Project 1 -->
-                    <article class="project-card">
-                        <div class="project-image">
-                            <img src="assets/meet_summarizer.png" alt="MeetSummarizer Preview">
-                        </div>
-                        <div class="project-info">
-                            <div class="project-tags">
-                                <span class="tag">Transformers.js</span>
-                                <span class="tag">WebGPU</span>
-                                <span class="tag">WebRTC</span>
-                            </div>
-                            <h3>MeetSummarizer</h3>
-                            <p class="project-desc">A Speech-to-Text pipeline using Transformers.js and WebGPU for
-                                near-instant transcription. Implemented sliding-window audio buffers and WebRTC for
-                                low-latency P2P streaming with a privacy-by-design architecture.</p>
-                        </div>
-                    </article>
+                <header class="section-heading reveal">
+                    <p class="section-kicker">01 / Selected work</p>
+                    <h2 id="work-title">Systems built around real constraints.</h2>
+                    <p>Three projects that show how I approach latency, privacy, concurrency, and learning systems.</p>
+                </header>
 
-                    <!-- Project 2 -->
-                    <article class="project-card">
-                        <div class="project-image">
-                            <img src="assets/flappy_bird_ai.png" alt="Flappy Bird AI Preview">
+                <article class="project project-featured reveal" aria-labelledby="meet-title">
+                    <div class="project-media">
+                        <div class="media-toolbar" aria-hidden="true">
+                            <span>MEET_SUMMARIZER / LIVE</span>
+                            <span>PRIVACY: LOCAL</span>
                         </div>
-                        <div class="project-info">
-                            <div class="project-tags">
-                                <span class="tag">JavaScript</span>
-                                <span class="tag">Neural Networks</span>
-                                <span class="tag">p5.js</span>
-                            </div>
-                            <h3>Flappy Bird AI Agent</h3>
-                            <p class="project-desc">Autonomous Flappy Bird agent trained using genetic algorithms and
-                                neural networks. Features configurable evolution controls for population size, mutation
-                                rate, and network architecture for optimized learning stability.</p>
+                        <img src="assets/meet_summarizer.png" width="2511" height="1320" loading="lazy" decoding="async" alt="MeetSummarizer video meeting interface with summary and transcript controls">
+                    </div>
+                    <div class="project-copy">
+                        <div class="project-meta">
+                            <span>Project 01</span>
+                            <time datetime="2025-07">Jul - Nov 2025</time>
                         </div>
-                    </article>
-
-                    <article class="project-card">
-                        <div class="project-info">
-                            <div class="project-tags">
-                                <span class="tag">Java</span>
-                                <span class="tag">WebSocket</span>
-                                <span class="tag">SQL</span>
+                        <h3 id="meet-title">MeetSummarizer</h3>
+                        <p class="project-lead">Private, real-time meeting transcription without sending raw audio to the cloud.</p>
+                        <p>Built an on-device speech-to-text pipeline around Whisper inference, overlapping audio windows, and peer-to-peer WebRTC media. The architecture keeps raw audio local while still supporting live captions and AI-generated meeting summaries.</p>
+                        <dl class="project-facts">
+                            <div>
+                                <dt>Constraint</dt>
+                                <dd>Prevent words from being cut at chunk boundaries.</dd>
                             </div>
-                            <h3>IMessage Website</h3>
-                            <p class="project-desc">Collaborative real-time messaging and audio calling platform. Built
-                                a custom system to process audio signals through a Java-based WebSocket server with an
-                                optimized project database.</p>
-                        </div>
-                    </article>
-
-                    <article class="project-card">
-                        <div class="project-info">
-                            <div class="project-tags">
-                                <span class="tag">C#/.NET</span>
-                                <span class="tag">SQL Server</span>
-                                <span class="tag">Multithreading</span>
+                            <div>
+                                <dt>Decision</dt>
+                                <dd>Use a 3-second sliding overlap between audio windows.</dd>
                             </div>
-                            <h3>Inventory Management System</h3>
-                            <p class="project-desc">Multithreaded desktop application with ACID-compliant SQL Server
-                                transactions. Supports high concurrency with fine-grained locking and features real-time
-                                dashboards with optimized UI update pipelines.</p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="surface">
-            <div class="container">
-                <div class="about-grid">
-                    <div>
-                        <h2 class="section-title">Education</h2>
-                        <div class="education-item">
-                            <div class="edu-header">
-                                <h3>Missouri State University</h3>
-                                <span class="edu-date">2022 — 2026</span>
+                            <div>
+                                <dt>Outcome</dt>
+                                <dd>Local-first transcription with low-latency peer media.</dd>
                             </div>
-                            <p>B.S. in Computer Science | GPA: 3.82/4.0</p>
-                            <p class="project-desc">Dean's List: 2023, 2024, 2025. Relevant Coursework: Data Structures
-                                & Algorithms, Artificial Intelligence, Big Data, Computer Networks.</p>
+                        </dl>
+                        <ul class="tech-list" aria-label="MeetSummarizer technologies">
+                            <li>Electron</li>
+                            <li>React</li>
+                            <li>Whisper</li>
+                            <li>WebRTC</li>
+                            <li>Socket.io</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/khuongngoduc0310/SummarizerApp">View source <span aria-hidden="true">&#8599;</span></a>
+                            <a href="https://github.com/khuongngoduc0310/SummarizerApp#readme">Read case study <span aria-hidden="true">&#8599;</span></a>
                         </div>
                     </div>
-                    <div>
-                        <h2 class="section-title">Technical Skills</h2>
-                        <div class="skill-category">
-                            <h4>Languages</h4>
-                            <div class="skill-list">
-                                <span class="tag">Python</span>
-                                <span class="tag">Java</span>
-                                <span class="tag">C++</span>
-                                <span class="tag">JavaScript</span>
-                                <span class="tag">C#</span>
-                            </div>
+                </article>
+
+                <article class="project project-reverse reveal" aria-labelledby="flappy-title">
+                    <div class="project-media project-media-cyan">
+                        <div class="media-toolbar" aria-hidden="true">
+                            <span>EVOLUTION / ACTIVE</span>
+                            <span>GENETIC AGENT</span>
                         </div>
-                        <div class="skill-category">
-                            <h4>Frameworks & Tools</h4>
-                            <div class="skill-list">
-                                <span class="tag">Node.js</span>
-                                <span class="tag">Django</span>
-                                <span class="tag">.NET WinForms</span>
-                                <span class="tag">TensorFlow</span>
-                                <span class="tag">Git</span>
-                                <span class="tag">Apache Tomcat</span>
-                            </div>
+                        <img src="assets/flappy_bird_ai.png" width="1867" height="871" loading="lazy" decoding="async" alt="Flappy Bird neural-network training interface with evolution controls and live fitness chart">
+                    </div>
+                    <div class="project-copy">
+                        <div class="project-meta">
+                            <span>Project 02</span>
+                            <time datetime="2025-07">Jul - Dec 2025</time>
                         </div>
-                        <div class="skill-category">
-                            <h4>Backend & Systems</h4>
-                            <div class="skill-list">
-                                <span class="tag">Multithreading</span>
-                                <span class="tag">WebSocket</span>
-                                <span class="tag">TCP/IP</span>
-                                <span class="tag">SQL Server</span>
-                                <span class="tag">MongoDB</span>
+                        <h3 id="flappy-title">Flappy Bird AI</h3>
+                        <p class="project-lead">An autonomous game agent that learns through neuroevolution.</p>
+                        <p>Developed a browser-based simulation where populations of neural-network agents evolve against randomized obstacles. Configurable controls make mutation, population size, and network architecture visible and testable.</p>
+                        <dl class="project-facts">
+                            <div>
+                                <dt>Constraint</dt>
+                                <dd>Learn robust behavior across varied starting conditions.</dd>
+                            </div>
+                            <div>
+                                <dt>Decision</dt>
+                                <dd>Tune fitness scoring and reward shaping across generations.</dd>
+                            </div>
+                            <div>
+                                <dt>Outcome</dt>
+                                <dd>Stable agents that navigate randomized obstacle patterns.</dd>
+                            </div>
+                        </dl>
+                        <ul class="tech-list" aria-label="Flappy Bird AI technologies">
+                            <li>JavaScript</li>
+                            <li>p5.js</li>
+                            <li>Neural networks</li>
+                            <li>Genetic algorithms</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://khuongngoduc0310.github.io/Flappy-Bird-with-Neural-Network/">Launch demo <span aria-hidden="true">&#8599;</span></a>
+                            <a href="https://github.com/khuongngoduc0310/Flappy-Bird-with-Neural-Network">View source <span aria-hidden="true">&#8599;</span></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project reveal" aria-labelledby="inventory-title">
+                    <div class="project-media system-panel" role="img" aria-label="Inventory system diagram connecting five or more desktop clients through a transaction and locking layer to SQL Server and live dashboards">
+                        <div class="media-toolbar" aria-hidden="true">
+                            <span>INVENTORY / SYSTEM MAP</span>
+                            <span>STATE: CONSISTENT</span>
+                        </div>
+                        <div class="system-map" aria-hidden="true">
+                            <div class="system-node node-clients">
+                                <span>01</span>
+                                <strong>Desktop clients</strong>
+                                <small>5+ concurrent users</small>
+                            </div>
+                            <div class="system-connector"><span></span></div>
+                            <div class="system-node node-locking">
+                                <span>02</span>
+                                <strong>Transaction layer</strong>
+                                <small>Fine-grained locking</small>
+                            </div>
+                            <div class="system-branches">
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="system-output">
+                                <div class="system-node">
+                                    <span>03A</span>
+                                    <strong>SQL Server</strong>
+                                    <small>ACID transactions</small>
+                                </div>
+                                <div class="system-node">
+                                    <span>03B</span>
+                                    <strong>Live dashboard</strong>
+                                    <small>Responsive UI updates</small>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="project-copy">
+                        <div class="project-meta">
+                            <span>Project 03</span>
+                            <time datetime="2025-01">Jan - Mar 2025</time>
+                        </div>
+                        <h3 id="inventory-title">Inventory Management</h3>
+                        <p class="project-lead">A multithreaded desktop system designed to preserve correctness under concurrent use.</p>
+                        <p>Developed inventory workflows around ACID-compliant SQL Server transactions and fine-grained locking. Real-time dashboards use an optimized update path so background operations do not compromise interface responsiveness.</p>
+                        <dl class="project-facts">
+                            <div>
+                                <dt>Constraint</dt>
+                                <dd>Concurrent writes must not corrupt shared inventory state.</dd>
+                            </div>
+                            <div>
+                                <dt>Decision</dt>
+                                <dd>Pair database transactions with fine-grained application locks.</dd>
+                            </div>
+                            <div>
+                                <dt>Outcome</dt>
+                                <dd>Validated for 5+ simultaneous users with stress testing.</dd>
+                            </div>
+                        </dl>
+                        <ul class="tech-list" aria-label="Inventory Management technologies">
+                            <li>C#</li>
+                            <li>.NET WinForms</li>
+                            <li>SQL Server</li>
+                            <li>Multithreading</li>
+                        </ul>
+                        <p class="project-note">Academic project / source available on request</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="about-section" id="about" aria-labelledby="about-title">
+            <div class="container about-layout">
+                <header class="section-heading section-heading-light reveal">
+                    <p class="section-kicker">02 / About</p>
+                    <h2 id="about-title">I care about what happens beneath the interface.</h2>
+                </header>
+                <div class="about-copy reveal">
+                    <p class="about-lead">I am a recent Computer Science graduate interested in software where performance, data integrity, and user experience meet.</p>
+                    <p>My projects have taken me from GPU-assisted speech inference and peer-to-peer media to neural-network simulations and concurrent database applications. I enjoy tracing a system end to end, understanding its constraints, and making deliberate tradeoffs instead of hiding complexity behind abstractions.</p>
+                    <p>Outside the code, I have supported cultural exchange and campus events through Missouri State University's Vietnamese Student Association. I am now looking for a software engineering team where I can contribute, learn quickly, and take ownership of meaningful systems.</p>
+                </div>
+
+                <div class="credentials reveal">
+                    <article class="credential-card">
+                        <p class="credential-label">Education</p>
+                        <h3>Missouri State University</h3>
+                        <p>B.S. in Computer Science</p>
+                        <time datetime="2022-08/2026-06">August 2022 - June 2026</time>
+                        <dl>
+                            <div><dt>GPA</dt><dd>3.82 / 4.00</dd></div>
+                            <div><dt>Recognition</dt><dd>Dean's List, 2023-2025</dd></div>
+                            <div><dt>Coursework</dt><dd>Data Structures, AI, Networks</dd></div>
+                        </dl>
+                    </article>
+                    <article class="credential-card">
+                        <p class="credential-label">Leadership &amp; involvement</p>
+                        <h3>Vietnamese Student Association</h3>
+                        <p>Active member</p>
+                        <time datetime="2022-08">August 2022 - Present</time>
+                        <p class="credential-body">Supported community events, cultural exchange programs, and campus event logistics.</p>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <section id="contact">
+        <section class="skills-section" id="skills" aria-labelledby="skills-title">
             <div class="container">
-                <h2 class="section-title">Contact</h2>
-                <p>I'm currently looking for new opportunities and collaborations. Feel free to reach out!</p>
-                <div class="hero-links" style="margin-top: 2rem;">
-                    <a href="mailto:khuongngo0310@gmail.com" class="btn btn-primary">Email Me</a>
-                    <a href="https://www.linkedin.com/in/khuongngo0310/" class="btn btn-outline">LinkedIn</a>
-                    <a href="https://github.com/khuongngoduc0310" class="btn btn-outline">GitHub</a>
+                <header class="section-heading reveal">
+                    <p class="section-kicker">03 / Capabilities</p>
+                    <h2 id="skills-title">A systems-minded toolkit.</h2>
+                    <p>Technologies I have used to take projects from architecture to working software.</p>
+                </header>
+                <div class="skills-grid reveal">
+                    <article>
+                        <span class="skill-number">01</span>
+                        <h3>Languages</h3>
+                        <ul>
+                            <li>C++</li>
+                            <li>C#</li>
+                            <li>Java</li>
+                            <li>Python</li>
+                            <li>JavaScript</li>
+                        </ul>
+                    </article>
+                    <article>
+                        <span class="skill-number">02</span>
+                        <h3>Systems</h3>
+                        <ul>
+                            <li>Multithreading</li>
+                            <li>Concurrency</li>
+                            <li>TCP/IP</li>
+                            <li>WebSocket</li>
+                            <li>WebRTC</li>
+                        </ul>
+                    </article>
+                    <article>
+                        <span class="skill-number">03</span>
+                        <h3>Backend &amp; data</h3>
+                        <ul>
+                            <li>Node.js</li>
+                            <li>Django</li>
+                            <li>SQL Server</li>
+                            <li>PostgreSQL</li>
+                            <li>MongoDB</li>
+                        </ul>
+                    </article>
+                    <article>
+                        <span class="skill-number">04</span>
+                        <h3>AI &amp; application</h3>
+                        <ul>
+                            <li>Neural networks</li>
+                            <li>Whisper</li>
+                            <li>WebGPU</li>
+                            <li>Electron</li>
+                            <li>.NET WinForms</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact" aria-labelledby="contact-title">
+            <div class="container contact-layout reveal">
+                <div>
+                    <p class="section-kicker">04 / Contact</p>
+                    <h2 id="contact-title">Let's build software that holds up.</h2>
+                </div>
+                <div class="contact-copy">
+                    <p>I am looking for software engineering opportunities where I can work on thoughtful products, challenging systems, and measurable improvements.</p>
+                    <a class="contact-email" href="mailto:khuongngo0310@gmail.com">khuongngo0310@gmail.com <span aria-hidden="true">&#8599;</span></a>
+                    <div class="contact-links">
+                        <a href="resume2.pdf" download="Khuong-Kyle-Ngo-Resume.pdf">Resume</a>
+                        <a href="https://www.linkedin.com/in/khuongngo0310/">LinkedIn</a>
+                        <a href="https://github.com/khuongngoduc0310">GitHub</a>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Khuong Ngo. Built with precision and simplicity.</p>
+    <footer class="site-footer">
+        <div class="container footer-layout">
+            <p>Khuong "Kyle" Ngo</p>
+            <p>Software engineer / Recent CS graduate</p>
+            <p>&copy; 2026</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
-
 </html>

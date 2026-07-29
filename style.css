@@ -570,7 +570,7 @@ h3 {
     letter-spacing: -0.025em;
 }
 
-.project-copy > p:not(.project-lead, .project-note) {
+.project-copy > p:not(.project-lead) {
     color: var(--muted);
 }
 
@@ -622,15 +622,6 @@ h3 {
     margin-top: 2rem;
 }
 
-.project-note {
-    margin-top: 2rem;
-    color: var(--muted);
-    font-family: var(--font-mono);
-    font-size: 0.68rem;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-}
-
 .system-panel {
     min-height: 34rem;
 }
@@ -677,13 +668,13 @@ h3 {
     font-size: 0.65rem;
 }
 
-.node-clients,
-.node-locking {
+.node-input,
+.node-controller {
     width: min(100%, 21rem);
     margin-inline: auto;
 }
 
-.node-locking {
+.node-controller {
     border-color: var(--accent);
     box-shadow: 0 0 2rem rgba(49, 87, 255, 0.18);
 }

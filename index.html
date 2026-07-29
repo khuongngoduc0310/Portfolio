@@ -133,8 +133,8 @@
                     <span>Computer science GPA</span>
                 </div>
                 <div class="proof-item">
-                    <strong>5+</strong>
-                    <span>Concurrent inventory users</span>
+                    <strong>8</strong>
+                    <span>Specialized workflow routes</span>
                 </div>
                 <div class="proof-item">
                     <strong>3 sec</strong>
@@ -152,7 +152,7 @@
                 <header class="section-heading reveal">
                     <p class="section-kicker">01 / Selected work</p>
                     <h2 id="work-title">Systems built around real constraints.</h2>
-                    <p>Three projects that show how I approach latency, privacy, concurrency, and learning systems.</p>
+                    <p>Three projects that show how I approach latency, privacy, learning systems, and reliable agent orchestration.</p>
                 </header>
 
                 <article class="project project-featured reveal" aria-labelledby="meet-title">
@@ -242,23 +242,23 @@
                     </div>
                 </article>
 
-                <article class="project reveal" aria-labelledby="inventory-title">
-                    <div class="project-media system-panel" role="img" aria-label="Inventory system diagram connecting five or more desktop clients through a transaction and locking layer to SQL Server and live dashboards">
+                <article class="project reveal" aria-labelledby="orchestrator-title">
+                    <div class="project-media system-panel" role="img" aria-label="piOrchestrator diagram routing a validated request through a central controller to capability-scoped agents and resumable checks">
                         <div class="media-toolbar" aria-hidden="true">
-                            <span>INVENTORY / SYSTEM MAP</span>
-                            <span>STATE: CONSISTENT</span>
+                            <span>PI_ORCHESTRATOR / ACTIVE</span>
+                            <span>MODE: GUARDED</span>
                         </div>
                         <div class="system-map" aria-hidden="true">
-                            <div class="system-node node-clients">
+                            <div class="system-node node-input">
                                 <span>01</span>
-                                <strong>Desktop clients</strong>
-                                <small>5+ concurrent users</small>
+                                <strong>Route request</strong>
+                                <small>8 specialized workflows</small>
                             </div>
                             <div class="system-connector"><span></span></div>
-                            <div class="system-node node-locking">
+                            <div class="system-node node-controller">
                                 <span>02</span>
-                                <strong>Transaction layer</strong>
-                                <small>Fine-grained locking</small>
+                                <strong>Central controller</strong>
+                                <small>Transitions + retry limits</small>
                             </div>
                             <div class="system-branches">
                                 <span></span>
@@ -267,13 +267,13 @@
                             <div class="system-output">
                                 <div class="system-node">
                                     <span>03A</span>
-                                    <strong>SQL Server</strong>
-                                    <small>ACID transactions</small>
+                                    <strong>Scoped agents</strong>
+                                    <small>Role-specific capabilities</small>
                                 </div>
                                 <div class="system-node">
                                     <span>03B</span>
-                                    <strong>Live dashboard</strong>
-                                    <small>Responsive UI updates</small>
+                                    <strong>Checks + checkpoints</strong>
+                                    <small>Validated, resumable runs</small>
                                 </div>
                             </div>
                         </div>
@@ -281,32 +281,36 @@
                     <div class="project-copy">
                         <div class="project-meta">
                             <span>Project 03</span>
-                            <time datetime="2025-01">Jan - Mar 2025</time>
+                            <time datetime="2026-07">Jul 2026 - Present</time>
                         </div>
-                        <h3 id="inventory-title">Inventory Management</h3>
-                        <p class="project-lead">A multithreaded desktop system designed to preserve correctness under concurrent use.</p>
-                        <p>Developed inventory workflows around ACID-compliant SQL Server transactions and fine-grained locking. Real-time dashboards use an optimized update path so background operations do not compromise interface responsiveness.</p>
+                        <h3 id="orchestrator-title">piOrchestrator</h3>
+                        <p class="project-lead">A deterministic workflow controller that keeps multi-agent coding tasks reviewable, resumable, and bounded.</p>
+                        <p>Built a Pi coding-agent extension that coordinates specialized agents through centrally owned workflow transitions. It validates structured outputs, restricts role capabilities, gates mutations behind green checks, isolates changes in Git worktrees, and persists checkpoints for safe recovery.</p>
                         <dl class="project-facts">
                             <div>
                                 <dt>Constraint</dt>
-                                <dd>Concurrent writes must not corrupt shared inventory state.</dd>
+                                <dd>Agents must not skip human review, validation gates, or approved mutation boundaries.</dd>
                             </div>
                             <div>
                                 <dt>Decision</dt>
-                                <dd>Pair database transactions with fine-grained application locks.</dd>
+                                <dd>Keep transitions, retries, output validation, and capabilities under one controller.</dd>
                             </div>
                             <div>
                                 <dt>Outcome</dt>
-                                <dd>Validated for 5+ simultaneous users with stress testing.</dd>
+                                <dd>Eight workflow routes with resumable checkpoints and live execution observability.</dd>
                             </div>
                         </dl>
-                        <ul class="tech-list" aria-label="Inventory Management technologies">
-                            <li>C#</li>
-                            <li>.NET WinForms</li>
-                            <li>SQL Server</li>
-                            <li>Multithreading</li>
+                        <ul class="tech-list" aria-label="piOrchestrator technologies">
+                            <li>TypeScript</li>
+                            <li>Node.js</li>
+                            <li>React</li>
+                            <li>Vitest</li>
+                            <li>Pi coding agent</li>
                         </ul>
-                        <p class="project-note">Academic project / source available on request</p>
+                        <div class="project-links">
+                            <a href="https://github.com/khuongngoduc0310/piOrchestrator">View source <span aria-hidden="true">&#8599;</span></a>
+                            <a href="https://github.com/khuongngoduc0310/piOrchestrator#reliability-policy">Reliability policy <span aria-hidden="true">&#8599;</span></a>
+                        </div>
                     </div>
                 </article>
             </div>
@@ -320,7 +324,7 @@
                 </header>
                 <div class="about-copy reveal">
                     <p class="about-lead">I am a recent Computer Science graduate interested in software where performance, data integrity, and user experience meet.</p>
-                    <p>My projects have taken me from GPU-assisted speech inference and peer-to-peer media to neural-network simulations and concurrent database applications. I enjoy tracing a system end to end, understanding its constraints, and making deliberate tradeoffs instead of hiding complexity behind abstractions.</p>
+                    <p>My projects have taken me from GPU-assisted speech inference and peer-to-peer media to neural-network simulations and safety-first multi-agent coding workflows. I enjoy tracing a system end to end, understanding its constraints, and making deliberate tradeoffs instead of hiding complexity behind abstractions.</p>
                     <p>Outside the code, I have supported cultural exchange and campus events through Missouri State University's Vietnamese Student Association. I am now looking for a software engineering team where I can contribute, learn quickly, and take ownership of meaningful systems.</p>
                 </div>
 
@@ -364,6 +368,7 @@
                             <li>Java</li>
                             <li>Python</li>
                             <li>JavaScript</li>
+                            <li>TypeScript</li>
                         </ul>
                     </article>
                     <article>

@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+  <title>piOrchestrator controlled workflow</title>
+  <desc>A request passes through Explorer, Planner, and Plan Review under a central controller. Read-only routes report findings, while approved mutation routes continue through a green baseline, scoped implementation, review, final checks, and resumable finalization.</desc>
+  <defs>
+    <pattern id="pi-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#1d2635" stroke-width="1"/>
+    </pattern>
+    <marker id="pi-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0 0L10 5L0 10Z" fill="#3157ff"/>
+    </marker>
+    <marker id="pi-green-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0 0L10 5L0 10Z" fill="#b9ff32"/>
+    </marker>
+    <style>
+      .label{font:500 17px 'IBM Plex Mono',Consolas,monospace;letter-spacing:1.5px;fill:#9ba6b7}.heading{font:700 25px 'IBM Plex Sans',Arial,sans-serif;fill:#f7f7f2}.body{font:400 16px 'IBM Plex Sans',Arial,sans-serif;fill:#c5ccd7}.small{font:400 14px 'IBM Plex Mono',Consolas,monospace;fill:#8c97a8}.node{fill:#151a23;stroke:#536075;stroke-width:2}.accent{fill:#171d2c;stroke:#3157ff;stroke-width:3}.safe{fill:#182016;stroke:#b9ff32;stroke-width:2}.line{fill:none;stroke:#3157ff;stroke-width:3;marker-end:url(#pi-arrow)}.safe-line{fill:none;stroke:#b9ff32;stroke-width:3;marker-end:url(#pi-green-arrow)}
+    </style>
+  </defs>
+  <rect width="1600" height="900" fill="#0b0e14"/>
+  <rect width="1600" height="900" fill="url(#pi-grid)"/>
+  <rect width="1600" height="92" fill="#111318"/>
+  <circle cx="55" cy="46" r="7" fill="#b9ff32"/>
+  <text x="78" y="53" class="label">PIORCHESTRATOR / CONTROLLED WORKFLOW</text>
+  <text x="1490" y="53" text-anchor="end" class="label">8 SPECIALIZED ROUTES</text>
+
+  <rect x="55" y="125" width="1490" height="90" rx="12" class="accent"/>
+  <text x="90" y="162" class="label">CENTRAL CONTROLLER</text>
+  <text x="90" y="194" class="body">Owns every transition, validation decision, retry limit, human gate, and checkpoint. Agents cannot advance workflow state themselves.</text>
+  <text x="1500" y="178" text-anchor="end" class="small">FAIL CLOSED</text>
+
+  <rect x="55" y="300" width="190" height="120" rx="10" class="node"/>
+  <text x="78" y="335" class="label">00</text>
+  <text x="78" y="374" class="heading">Request</text>
+  <text x="78" y="400" class="small">ROUTE + ACCEPTANCE</text>
+
+  <rect x="290" y="300" width="190" height="120" rx="10" class="node"/>
+  <text x="313" y="335" class="label">01</text>
+  <text x="313" y="374" class="heading">Explorer</text>
+  <text x="313" y="400" class="small">READ-ONLY CONTEXT</text>
+
+  <rect x="525" y="300" width="190" height="120" rx="10" class="node"/>
+  <text x="548" y="335" class="label">02</text>
+  <text x="548" y="374" class="heading">Planner</text>
+  <text x="548" y="400" class="small">TASK GRAPH</text>
+
+  <path d="M820 285L925 360L820 435L715 360Z" fill="#171d2c" stroke="#3157ff" stroke-width="3"/>
+  <text x="820" y="348" text-anchor="middle" class="label">03</text>
+  <text x="820" y="379" text-anchor="middle" class="heading">Plan review</text>
+
+  <rect x="1010" y="260" width="235" height="120" rx="10" class="node"/>
+  <text x="1035" y="295" class="label">READ-ONLY</text>
+  <text x="1035" y="334" class="heading">Report result</text>
+  <text x="1035" y="360" class="small">NO CHECKS OR MUTATION</text>
+
+  <rect x="1010" y="445" width="235" height="140" rx="10" class="safe"/>
+  <text x="1035" y="481" class="label">MUTATION ROUTE</text>
+  <text x="1035" y="521" class="heading">Green baseline</text>
+  <text x="1035" y="549" class="body">Approved checks</text>
+  <text x="1035" y="574" class="small">ISOLATED WORKTREE</text>
+
+  <rect x="1300" y="445" width="245" height="140" rx="10" class="accent"/>
+  <text x="1325" y="481" class="label">SCOPED EXECUTION</text>
+  <text x="1325" y="521" class="heading">Test + build</text>
+  <text x="1325" y="549" class="body">Role-limited tools</text>
+  <text x="1325" y="574" class="small">CHECK AFTER MUTATION</text>
+
+  <rect x="1010" y="655" width="235" height="135" rx="10" class="node"/>
+  <text x="1035" y="691" class="label">REVIEW</text>
+  <text x="1035" y="731" class="heading">Code + docs</text>
+  <text x="1035" y="759" class="small">FIX, CHECK, RE-REVIEW</text>
+
+  <rect x="1300" y="655" width="245" height="135" rx="10" class="safe"/>
+  <text x="1325" y="691" class="label">FINALIZE</text>
+  <text x="1325" y="731" class="heading">Validate + sync</text>
+  <text x="1325" y="759" class="small">DURABLE CHECKPOINT</text>
+
+  <path d="M245 360H290" class="line"/>
+  <path d="M480 360H525" class="line"/>
+  <path d="M715 360H715" class="line"/>
+  <path d="M925 338H1010" class="line"/>
+  <text x="968" y="323" text-anchor="middle" class="small">READ-ONLY</text>
+  <path d="M880 410L1010 492" class="safe-line"/>
+  <text x="930" y="462" class="small">APPROVED</text>
+  <path d="M1245 515H1300" class="safe-line"/>
+  <path d="M1422 585V620H1128V655" class="line"/>
+  <path d="M1245 722H1300" class="safe-line"/>
+
+  <rect x="55" y="515" width="820" height="275" rx="12" fill="#0f131b" stroke="#394455" stroke-width="2"/>
+  <text x="88" y="558" class="label">GUARDRAILS APPLIED AT EVERY BOUNDARY</text>
+  <rect x="88" y="595" width="225" height="70" rx="8" class="node"/>
+  <text x="110" y="624" class="heading">Structured output</text>
+  <text x="110" y="649" class="small">ROLE-SPECIFIC VALIDATION</text>
+  <rect x="348" y="595" width="225" height="70" rx="8" class="node"/>
+  <text x="370" y="624" class="heading">Capability scope</text>
+  <text x="370" y="649" class="small">EXACT FILE + TOOL LIMITS</text>
+  <rect x="608" y="595" width="225" height="70" rx="8" class="node"/>
+  <text x="630" y="624" class="heading">Workspace audit</text>
+  <text x="630" y="649" class="small">OBSERVED DIFF ENFORCEMENT</text>
+  <rect x="88" y="700" width="225" height="58" rx="8" class="node"/>
+  <text x="110" y="736" class="body">Human decision gates</text>
+  <rect x="348" y="700" width="225" height="58" rx="8" class="node"/>
+  <text x="370" y="736" class="body">Bounded retries</text>
+  <rect x="608" y="700" width="225" height="58" rx="8" class="node"/>
+  <text x="630" y="736" class="body">Checkpoint resume</text>
+
+  <rect x="55" y="838" width="1490" height="1" fill="#394455"/>
+  <text x="55" y="875" class="small">SOURCE: PIORCHESTRATOR README / WORKFLOW ROUTES, RELIABILITY POLICY, SDK EXECUTION, AND CHECKPOINT RESUME</text>
+</svg>

@@ -223,6 +223,7 @@ h3 {
 .hero-copy,
 .profile-index,
 .project-copy,
+.project-visuals,
 .project-media {
     min-width: 0;
 }
@@ -488,7 +489,7 @@ h3 {
     grid-template-columns: minmax(20rem, 0.75fr) minmax(0, 1.55fr);
 }
 
-.project-reverse .project-media {
+.project-reverse .project-visuals {
     grid-column: 2;
 }
 
@@ -502,6 +503,12 @@ h3 {
     border: 1px solid #30343d;
     background: #0e1014;
     box-shadow: 0 1.5rem 3rem rgba(17, 19, 24, 0.12);
+}
+
+.project-visuals {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
 }
 
 .media-toolbar {
@@ -535,6 +542,35 @@ h3 {
     object-fit: contain;
     background: #090b0e;
     transition: transform 400ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.architecture-media img {
+    padding: 0;
+    background: #0b0e14;
+}
+
+.architecture-link {
+    position: relative;
+    display: block;
+}
+
+.architecture-link span {
+    position: absolute;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    padding: 0.45rem 0.65rem;
+    color: var(--ink);
+    background: var(--signal);
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    transition: transform 160ms ease;
+}
+
+.architecture-link:hover span {
+    transform: translate(-2px, -2px);
 }
 
 .project:hover .project-media img {
@@ -620,105 +656,6 @@ h3 {
     flex-wrap: wrap;
     gap: 1.5rem;
     margin-top: 2rem;
-}
-
-.system-panel {
-    min-height: 34rem;
-}
-
-.system-map {
-    display: flex;
-    min-height: 31.25rem;
-    padding: clamp(2rem, 5vw, 4rem);
-    flex-direction: column;
-    justify-content: center;
-    color: var(--panel-text);
-    background-image: linear-gradient(rgba(49, 87, 255, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(49, 87, 255, 0.08) 1px, transparent 1px);
-    background-size: 2rem 2rem;
-}
-
-.system-node {
-    position: relative;
-    padding: 1rem 1.25rem;
-    border: 1px solid #5a6270;
-    background: #151921;
-}
-
-.system-node span {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: var(--signal);
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
-}
-
-.system-node strong,
-.system-node small {
-    display: block;
-}
-
-.system-node strong {
-    font-size: 1.1rem;
-}
-
-.system-node small {
-    margin-top: 0.25rem;
-    color: #aab0bb;
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
-}
-
-.node-input,
-.node-controller {
-    width: min(100%, 21rem);
-    margin-inline: auto;
-}
-
-.node-controller {
-    border-color: var(--accent);
-    box-shadow: 0 0 2rem rgba(49, 87, 255, 0.18);
-}
-
-.system-connector {
-    display: flex;
-    height: 3rem;
-    justify-content: center;
-}
-
-.system-connector span {
-    width: 1px;
-    background: var(--accent);
-}
-
-.system-branches {
-    position: relative;
-    display: flex;
-    width: 52%;
-    height: 3rem;
-    margin-inline: auto;
-    justify-content: space-between;
-    border-top: 1px solid var(--accent);
-}
-
-.system-branches::before {
-    position: absolute;
-    top: -3rem;
-    left: 50%;
-    width: 1px;
-    height: 3rem;
-    content: "";
-    background: var(--accent);
-}
-
-.system-branches span {
-    width: 1px;
-    background: var(--accent);
-}
-
-.system-output {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
 }
 
 .about-section {
@@ -977,12 +914,12 @@ h3 {
         grid-template-columns: 1fr;
     }
 
-    .project-reverse .project-media,
+    .project-reverse .project-visuals,
     .project-reverse .project-copy {
         grid-column: 1;
     }
 
-    .project-reverse .project-media {
+    .project-reverse .project-visuals {
         grid-row: 1;
     }
 
@@ -1087,14 +1024,6 @@ h3 {
         font-size: clamp(2.5rem, 12vw, 4rem);
     }
 
-    .system-panel {
-        min-height: auto;
-    }
-
-    .system-map {
-        min-height: 28rem;
-    }
-
     .about-layout {
         display: block;
     }
@@ -1157,26 +1086,6 @@ h3 {
     .project-facts div {
         grid-template-columns: 1fr;
         gap: 0.25rem;
-    }
-
-    .system-map {
-        padding: 1.25rem;
-    }
-
-    .system-output {
-        gap: 0.5rem;
-    }
-
-    .system-node {
-        padding: 0.75rem;
-    }
-
-    .system-node strong {
-        font-size: 0.85rem;
-    }
-
-    .system-node small {
-        font-size: 0.55rem;
     }
 
     .credential-card {

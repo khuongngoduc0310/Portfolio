@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+  <title>Flappy Bird AI neuroevolution loop</title>
+  <desc>Random neural network weights enter a game simulation. After every bird dies, agents are evaluated by survival time, the best five percent are selected, crossed over and mutated, and one elite brain is preserved for the next generation.</desc>
+  <defs>
+    <pattern id="flappy-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#14242a" stroke-width="1"/>
+    </pattern>
+    <marker id="flappy-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0 0L10 5L0 10Z" fill="#00d9e8"/>
+    </marker>
+    <style>
+      .label{font:500 17px 'IBM Plex Mono',Consolas,monospace;letter-spacing:1.5px;fill:#9ba6b7}.heading{font:700 27px 'IBM Plex Sans',Arial,sans-serif;fill:#f7f7f2}.body{font:400 17px 'IBM Plex Sans',Arial,sans-serif;fill:#c5ccd7}.small{font:400 14px 'IBM Plex Mono',Consolas,monospace;fill:#8c97a8}.node{fill:#151a20;stroke:#50606a;stroke-width:2}.accent{fill:#122128;stroke:#00d9e8;stroke-width:3}.line{fill:none;stroke:#00d9e8;stroke-width:3;marker-end:url(#flappy-arrow)}.muted{fill:none;stroke:#52606b;stroke-width:2;stroke-dasharray:10 8;marker-end:url(#flappy-arrow)}
+    </style>
+  </defs>
+  <rect width="1600" height="900" fill="#080c0e"/>
+  <rect width="1600" height="900" fill="url(#flappy-grid)"/>
+  <rect width="1600" height="92" fill="#101519"/>
+  <circle cx="55" cy="46" r="7" fill="#00d9e8"/>
+  <text x="78" y="53" class="label">FLAPPY BIRD AI / NEUROEVOLUTION LOOP</text>
+  <text x="1490" y="53" text-anchor="end" class="label">ZERO ML FRAMEWORKS</text>
+
+  <rect x="65" y="285" width="230" height="170" rx="12" class="node"/>
+  <text x="95" y="328" class="label">01 / INITIALIZE</text>
+  <text x="95" y="374" class="heading">Random weights</text>
+  <text x="95" y="407" class="body">Generation 1</text>
+  <text x="95" y="434" class="small">1,000 BRAINS</text>
+
+  <rect x="355" y="245" width="280" height="250" rx="12" class="accent"/>
+  <text x="390" y="290" class="label">02 / SIMULATE</text>
+  <text x="390" y="338" class="heading">Play the game</text>
+  <text x="390" y="376" class="body">5 inputs</text>
+  <text x="390" y="407" class="body">Neural network</text>
+  <text x="390" y="438" class="body">1 output: flap?</text>
+  <rect x="390" y="461" width="180" height="2" fill="#00d9e8"/>
+
+  <path d="M760 275L865 370L760 465L655 370Z" fill="#172027" stroke="#00d9e8" stroke-width="3"/>
+  <text x="760" y="354" text-anchor="middle" class="label">ALL BIRDS</text>
+  <text x="760" y="385" text-anchor="middle" class="heading">dead?</text>
+
+  <rect x="925" y="245" width="245" height="250" rx="12" class="node"/>
+  <text x="958" y="290" class="label">03 / EVALUATE</text>
+  <text x="958" y="338" class="heading">Fitness score</text>
+  <text x="958" y="378" class="body">Survival frames</text>
+  <text x="958" y="409" class="body">Rank population</text>
+  <text x="958" y="443" class="small">LONGER LIFE = HIGHER SCORE</text>
+
+  <rect x="1230" y="140" width="300" height="170" rx="12" class="node"/>
+  <text x="1262" y="182" class="label">04 / SELECT</text>
+  <text x="1262" y="228" class="heading">Top 5%</text>
+  <text x="1262" y="261" class="body">Distinct parent pool</text>
+  <text x="1262" y="288" class="small">MINIMUM TWO SURVIVORS</text>
+
+  <rect x="1230" y="355" width="300" height="185" rx="12" class="accent"/>
+  <text x="1262" y="398" class="label">05 / BREED</text>
+  <text x="1262" y="444" class="heading">Crossover + mutate</text>
+  <text x="1262" y="478" class="body">Uniform weight crossover</text>
+  <text x="1262" y="507" class="body">Gaussian mutation noise</text>
+
+  <rect x="1230" y="585" width="300" height="160" rx="12" class="node"/>
+  <text x="1262" y="628" class="label">06 / PRESERVE</text>
+  <text x="1262" y="674" class="heading">Elitism</text>
+  <text x="1262" y="707" class="body">Best brain copied unchanged</text>
+
+  <rect x="780" y="585" width="300" height="160" rx="12" class="node"/>
+  <text x="812" y="628" class="label">07 / RESTART</text>
+  <text x="812" y="674" class="heading">Next generation</text>
+  <text x="812" y="707" class="body">New randomized pipes</text>
+
+  <path d="M295 370H355" class="line"/>
+  <path d="M635 370H655" class="line"/>
+  <path d="M865 370H925" class="line"/>
+  <text x="885" y="351" class="small">YES</text>
+  <path d="M760 275V190H495V245" class="muted"/>
+  <text x="730" y="176" class="small">NO: CONTINUE SIMULATION</text>
+  <path d="M1170 320H1200V225H1230" class="line"/>
+  <path d="M1380 310V355" class="line"/>
+  <path d="M1380 540V585" class="line"/>
+  <path d="M1230 665H1080" class="line"/>
+  <path d="M780 665H495V495" class="line"/>
+
+  <rect x="65" y="790" width="1465" height="1" fill="#34444b"/>
+  <text x="65" y="832" class="small">SOURCE: FLAPPY BIRD AI README / FITNESS, TOP-5% SELECTION, CROSSOVER, MUTATION, AND ELITISM</text>
+  <text x="1530" y="832" text-anchor="end" class="small">UP TO 20 TICKS / FRAME</text>
+</svg>

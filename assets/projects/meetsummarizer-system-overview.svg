@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+  <title>MeetSummarizer system overview</title>
+  <desc>Electron desktop application with React renderer and main process connected to local Whisper speech recognition, a WebGPU browser fallback, an Express and Socket.io backend, and PostgreSQL storage.</desc>
+  <defs>
+    <pattern id="meet-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#1d2635" stroke-width="1"/>
+    </pattern>
+    <marker id="meet-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0 0L10 5L0 10Z" fill="#3157ff"/>
+    </marker>
+    <style>
+      .label{font:500 17px 'IBM Plex Mono',Consolas,monospace;letter-spacing:1.5px;fill:#9ba6b7}.heading{font:700 30px 'IBM Plex Sans',Arial,sans-serif;fill:#f7f7f2}.body{font:400 18px 'IBM Plex Sans',Arial,sans-serif;fill:#c5ccd7}.small{font:400 15px 'IBM Plex Mono',Consolas,monospace;fill:#8c97a8}.node{fill:#151a23;stroke:#536075;stroke-width:2}.accent{fill:#171d2c;stroke:#3157ff;stroke-width:3}.line{fill:none;stroke:#3157ff;stroke-width:3;marker-end:url(#meet-arrow)}.dash{fill:none;stroke:#00d9e8;stroke-width:3;stroke-dasharray:10 9;marker-end:url(#meet-arrow)}
+    </style>
+  </defs>
+  <rect width="1600" height="900" fill="#0b0e14"/>
+  <rect width="1600" height="900" fill="url(#meet-grid)"/>
+  <rect x="0" y="0" width="1600" height="92" fill="#111318"/>
+  <circle cx="55" cy="46" r="7" fill="#b9ff32"/>
+  <text x="78" y="53" class="label">MEETSUMMARIZER / SYSTEM OVERVIEW</text>
+  <text x="1490" y="53" text-anchor="end" class="label">AUDIO: LOCAL</text>
+
+  <rect x="55" y="135" width="700" height="650" rx="18" fill="#0f131b" stroke="#3b4658" stroke-width="2"/>
+  <text x="90" y="180" class="label">ELECTRON DESKTOP APP</text>
+  <text x="690" y="180" text-anchor="end" class="small">LOCAL TRUST BOUNDARY</text>
+
+  <rect x="105" y="225" width="260" height="175" rx="10" class="node"/>
+  <text x="135" y="265" class="label">RENDERER</text>
+  <text x="135" y="310" class="heading">React interface</text>
+  <text x="135" y="342" class="body">Video grid + captions</text>
+  <text x="135" y="370" class="body">Summary + settings</text>
+
+  <rect x="445" y="225" width="260" height="175" rx="10" class="accent"/>
+  <text x="475" y="265" class="label">MAIN PROCESS</text>
+  <text x="475" y="310" class="heading">STT manager</text>
+  <text x="475" y="342" class="body">IPC + lifecycle</text>
+  <text x="475" y="370" class="body">Backend startup</text>
+
+  <rect x="105" y="505" width="260" height="165" rx="10" class="node"/>
+  <text x="135" y="545" class="label">MEDIA</text>
+  <text x="135" y="590" class="heading">WebRTC mesh</text>
+  <text x="135" y="622" class="body">Peer-to-peer audio/video</text>
+  <text x="135" y="650" class="small">NO SERVER MEDIA RELAY</text>
+
+  <rect x="445" y="505" width="260" height="165" rx="10" class="node"/>
+  <text x="475" y="545" class="label">AUDIO PIPELINE</text>
+  <text x="475" y="590" class="heading">PCM windows</text>
+  <text x="475" y="622" class="body">VAD + preprocessing</text>
+  <text x="475" y="650" class="small">16 KHZ MONO</text>
+
+  <rect x="845" y="155" width="300" height="215" rx="10" class="accent"/>
+  <text x="875" y="198" class="label">NATIVE SIDECAR</text>
+  <text x="875" y="247" class="heading">Whisper.cpp</text>
+  <text x="875" y="282" class="body">CPU or Vulkan inference</text>
+  <text x="875" y="315" class="body">Models stay on-device</text>
+  <rect x="875" y="332" width="200" height="2" fill="#3157ff"/>
+
+  <rect x="845" y="505" width="300" height="180" rx="10" class="node"/>
+  <text x="875" y="548" class="label">BROWSER FALLBACK</text>
+  <text x="875" y="597" class="heading">WebGPU Whisper</text>
+  <text x="875" y="632" class="body">ONNX local inference</text>
+  <text x="875" y="660" class="small">USED WHEN SIDECAR IS UNAVAILABLE</text>
+
+  <rect x="1240" y="155" width="305" height="215" rx="10" class="node"/>
+  <text x="1270" y="198" class="label">BACKEND</text>
+  <text x="1270" y="247" class="heading">Express + Socket.io</text>
+  <text x="1270" y="282" class="body">Signaling + captions</text>
+  <text x="1270" y="315" class="body">Summary endpoints</text>
+
+  <rect x="1240" y="505" width="305" height="180" rx="10" class="node"/>
+  <text x="1270" y="548" class="label">PERSISTENCE</text>
+  <text x="1270" y="597" class="heading">PostgreSQL</text>
+  <text x="1270" y="632" class="body">Transcript segments</text>
+  <text x="1270" y="660" class="body">Meeting summaries</text>
+
+  <path d="M365 312H445" class="line"/>
+  <text x="405" y="298" text-anchor="middle" class="small">IPC</text>
+  <path d="M575 400V505" class="line"/>
+  <path d="M705 585H770V265H845" class="line"/>
+  <text x="780" y="245" class="small">LOCAL AUDIO</text>
+  <path d="M845 315H805V430H705" class="line"/>
+  <text x="815" y="418" class="small">CAPTIONS</text>
+  <path d="M365 585H395V395H235V400" class="line"/>
+  <path d="M365 290H800V595H845" class="dash"/>
+  <text x="770" y="584" text-anchor="end" class="small">FALLBACK</text>
+  <path d="M365 260H790V115H1392V155" class="line"/>
+  <text x="1090" y="108" text-anchor="middle" class="small">SIGNALING + TEXT</text>
+  <path d="M1392 370V505" class="line"/>
+
+  <rect x="55" y="820" width="1490" height="1" fill="#394455"/>
+  <text x="55" y="858" class="small">SOURCE: SUMMARIZERAPP README / CURRENT ELECTRON + NATIVE STT ARCHITECTURE</text>
+  <circle cx="1210" cy="852" r="6" fill="#3157ff"/>
+  <text x="1228" y="858" class="small">PRIMARY FLOW</text>
+  <circle cx="1370" cy="852" r="6" fill="#00d9e8"/>
+  <text x="1388" y="858" class="small">FALLBACK</text>
+</svg>

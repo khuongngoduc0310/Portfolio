@@ -165,10 +165,17 @@
                             <img src="assets/meet_summarizer.png" width="2511" height="1320" loading="lazy" decoding="async" alt="MeetSummarizer video meeting interface with summary and transcript controls">
                         </div>
                         <div class="project-media architecture-media">
-                            <a class="architecture-link" href="assets/projects/meetsummarizer-system-overview.svg" target="_blank" rel="noopener" aria-label="Open the MeetSummarizer architecture diagram at full size">
-                                <img src="assets/projects/meetsummarizer-system-overview.svg" width="1600" height="900" loading="lazy" decoding="async" alt="MeetSummarizer architecture connecting the Electron interface to local Whisper inference, WebRTC media, the backend, and PostgreSQL">
-                                <span aria-hidden="true">Open diagram &#8599;</span>
-                            </a>
+                            <div class="architecture-frame">
+                                <section class="mermaid-host diagram-meet" data-mermaid-source="assets/projects/diagrams/meetsummarizer-system-overview.mmd" data-mermaid-state="fallback" tabindex="0" aria-label="MeetSummarizer architecture connecting the Electron interface to local speech inference, WebRTC media, signaling, and PostgreSQL. Scroll horizontally to inspect the complete diagram.">
+                                    <div class="mermaid-canvas">
+                                        <img class="mermaid-fallback" src="assets/projects/meetsummarizer-system-overview.svg" width="1600" height="900" loading="lazy" decoding="async" alt="">
+                                    </div>
+                                </section>
+                                <div class="diagram-controls">
+                                    <span class="diagram-pan-hint" aria-hidden="true">Pan to inspect &#8596;</span>
+                                    <a class="architecture-open" href="assets/projects/meetsummarizer-system-overview.svg" target="_blank" rel="noopener">Open diagram &#8599;</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="project-copy">
@@ -217,10 +224,17 @@
                             <img src="assets/flappy_bird_ai.png" width="1867" height="871" loading="lazy" decoding="async" alt="Flappy Bird neural-network training interface with evolution controls and live fitness chart">
                         </div>
                         <div class="project-media architecture-media">
-                            <a class="architecture-link" href="assets/projects/flappy-ai-evolution-loop.svg" target="_blank" rel="noopener" aria-label="Open the Flappy Bird AI evolution diagram at full size">
-                                <img src="assets/projects/flappy-ai-evolution-loop.svg" width="1600" height="900" loading="lazy" decoding="async" alt="Flappy Bird neuroevolution loop from random weights through simulation, fitness selection, crossover, mutation, and elitism">
-                                <span aria-hidden="true">Open diagram &#8599;</span>
-                            </a>
+                            <div class="architecture-frame">
+                                <section class="mermaid-host diagram-flappy" data-mermaid-source="assets/projects/diagrams/flappy-ai-evolution-loop.mmd" data-mermaid-state="fallback" tabindex="0" aria-label="Flappy Bird neuroevolution loop from population simulation through fitness selection, crossover, mutation, and elitism. Scroll horizontally to inspect the complete diagram.">
+                                    <div class="mermaid-canvas">
+                                        <img class="mermaid-fallback" src="assets/projects/flappy-ai-evolution-loop.svg" width="1600" height="900" loading="lazy" decoding="async" alt="">
+                                    </div>
+                                </section>
+                                <div class="diagram-controls">
+                                    <span class="diagram-pan-hint" aria-hidden="true">Pan to inspect &#8596;</span>
+                                    <a class="architecture-open" href="assets/projects/flappy-ai-evolution-loop.svg" target="_blank" rel="noopener">Open diagram &#8599;</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="project-copy">
@@ -261,10 +275,17 @@
                 <article class="project reveal" aria-labelledby="orchestrator-title">
                     <div class="project-visuals">
                         <div class="project-media architecture-media">
-                            <a class="architecture-link" href="assets/projects/piorchestrator-workflow.svg" target="_blank" rel="noopener" aria-label="Open the piOrchestrator workflow diagram at full size">
-                                <img src="assets/projects/piorchestrator-workflow.svg" width="1600" height="900" loading="lazy" decoding="async" alt="piOrchestrator workflow branching from plan review into read-only reporting or guarded mutation, review, checks, and checkpoint finalization">
-                                <span aria-hidden="true">Open diagram &#8599;</span>
-                            </a>
+                            <div class="architecture-frame">
+                                <section class="mermaid-host diagram-pi" data-mermaid-source="assets/projects/diagrams/piorchestrator-workflow.mmd" data-mermaid-state="fallback" tabindex="0" aria-label="piOrchestrator workflow branching from plan review into read-only reporting or guarded mutation, saved checks, bounded review fixes, and checkpoint finalization. Scroll horizontally to inspect the complete diagram.">
+                                    <div class="mermaid-canvas">
+                                        <img class="mermaid-fallback" src="assets/projects/piorchestrator-workflow.svg" width="1600" height="900" loading="lazy" decoding="async" alt="">
+                                    </div>
+                                </section>
+                                <div class="diagram-controls">
+                                    <span class="diagram-pan-hint" aria-hidden="true">Pan to inspect &#8596;</span>
+                                    <a class="architecture-open" href="assets/projects/piorchestrator-workflow.svg" target="_blank" rel="noopener">Open diagram &#8599;</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="project-copy">
@@ -425,5 +446,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script type="module" src="diagrams.js"></script>
 </body>
 </html>

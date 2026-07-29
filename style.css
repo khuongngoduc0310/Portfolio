@@ -545,36 +545,135 @@ h3 {
     transition: transform 400ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.architecture-media img {
-    padding: 0;
+.architecture-frame {
     background: #0b0e14;
 }
 
-.architecture-link {
-    position: relative;
-    display: block;
+.mermaid-host {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    background: #0b0e14;
+    overscroll-behavior-inline: contain;
+    scrollbar-color: #7388ff #151a23;
+    scrollbar-width: thin;
 }
 
-.architecture-link span {
+.mermaid-host:focus-visible {
+    outline-offset: -3px;
+}
+
+.mermaid-host::-webkit-scrollbar {
+    height: 0.55rem;
+}
+
+.mermaid-host::-webkit-scrollbar-track {
+    background: #151a23;
+}
+
+.mermaid-host::-webkit-scrollbar-thumb {
+    border: 2px solid #151a23;
+    border-radius: 999px;
+    background: #7388ff;
+}
+
+.mermaid-canvas {
+    position: relative;
+    width: max(100%, var(--diagram-min-width));
+    aspect-ratio: var(--diagram-ratio);
+    background: #0b0e14;
+}
+
+.diagram-meet {
+    --diagram-min-width: 640px;
+    --diagram-ratio: 2.22;
+}
+
+.diagram-flappy {
+    --diagram-min-width: 820px;
+    --diagram-ratio: 1.53;
+}
+
+.diagram-pi {
+    --diagram-min-width: 880px;
+    --diagram-ratio: 2.01;
+}
+
+.architecture-media .mermaid-fallback {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    aspect-ratio: auto;
+    padding: 0;
+    object-fit: contain;
+    background: #0b0e14;
+}
+
+.mermaid-runtime {
     position: absolute;
-    right: 0.75rem;
-    bottom: 0.75rem;
+    inset: 0;
+    display: grid;
+    margin: 0;
+    visibility: hidden;
+    place-items: center;
+}
+
+.mermaid-runtime.is-rendered {
+    visibility: visible;
+}
+
+.mermaid-runtime svg {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    background: #0b0e14;
+}
+
+.diagram-controls {
+    display: flex;
+    min-height: 3rem;
+    padding: 0.45rem 0.75rem;
+    border-top: 1px solid #30343d;
+    align-items: center;
+    justify-content: space-between;
+    background: #0e1014;
+}
+
+.diagram-pan-hint,
+.architecture-open {
     padding: 0.45rem 0.65rem;
     color: var(--ink);
-    background: var(--signal);
     font-family: var(--font-mono);
     font-size: 0.6rem;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.04em;
+}
+
+.diagram-pan-hint {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    background: var(--cyan);
+    transition: opacity 160ms ease, visibility 160ms ease;
+}
+
+.mermaid-host.is-scrollable:not(.is-panned) ~ .diagram-controls .diagram-pan-hint {
+    opacity: 1;
+    visibility: visible;
+}
+
+.architecture-open {
+    background: var(--signal);
     transition: transform 160ms ease;
 }
 
-.architecture-link:hover span {
+.architecture-open:hover {
     transform: translate(-2px, -2px);
 }
 
-.project:hover .project-media img {
+.project:hover .project-media:not(.architecture-media) img {
     transform: scale(1.012);
 }
 

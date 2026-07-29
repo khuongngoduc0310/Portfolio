@@ -15,8 +15,13 @@ python -m http.server 8000
 - `index.html` contains the page content and metadata.
 - `style.css` contains the visual system and responsive behavior.
 - `script.js` progressively enhances section reveals.
+- `diagrams.js` lazily renders project diagrams in the browser with Mermaid 11.16.0.
+- `assets/projects/diagrams/` contains the canonical Mermaid sources and shared configuration.
+- `assets/projects/*.svg` contains generated full-size and no-JavaScript diagram fallbacks.
 - `assets/` contains project media and sharing assets.
 - `resume2.pdf` is the public resume linked from the site.
+
+Runtime diagram rendering fetches local `.mmd` files, so local previews must use an HTTP server rather than opening `index.html` directly. The static SVG fallbacks remain available if JavaScript or the Mermaid CDN is unavailable.
 
 ## Deployment
 

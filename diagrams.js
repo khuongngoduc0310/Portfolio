@@ -56,11 +56,13 @@ const updateScrollability = host => {
 const renderDiagram = async host => {
     const sourceUrl = host.dataset.mermaidSource;
     const canvas = host.querySelector('.mermaid-canvas');
-    const fallback = host.querySelector('.mermaid-fallback');
+    const status = host.querySelector('.mermaid-status');
     let renderTarget;
 
     host.dataset.mermaidState = 'loading';
     host.setAttribute('aria-busy', 'true');
+    status.hidden = false;
+    status.textContent = 'Loading diagram from Mermaid...';
 
     try {
         const [mermaid, source] = await Promise.all([
@@ -86,12 +88,13 @@ const renderDiagram = async host => {
         svg.setAttribute('aria-hidden', 'true');
         svg.setAttribute('focusable', 'false');
         renderTarget.classList.add('is-rendered');
-        fallback.hidden = true;
+        status.hidden = true;
         host.dataset.mermaidState = 'rendered';
     } catch (error) {
         renderTarget?.remove();
-        fallback.hidden = false;
-        host.dataset.mermaidState = 'fallback';
+        status.hidden = false;
+        status.textContent = 'Diagram unavailable. View the Mermaid source below.';
+        host.dataset.mermaidState = 'error';
         console.error(`Mermaid rendering failed for ${sourceUrl}`, error);
     } finally {
         host.removeAttribute('aria-busy');

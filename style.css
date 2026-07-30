@@ -599,14 +599,34 @@ h3 {
     --diagram-ratio: 2.01;
 }
 
-.architecture-media .mermaid-fallback {
-    width: 100%;
-    height: 100%;
-    max-width: none;
-    aspect-ratio: auto;
-    padding: 0;
-    object-fit: contain;
-    background: #0b0e14;
+.mermaid-status,
+.mermaid-noscript {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    margin: 0;
+    padding: 2rem;
+    color: #afb5c0;
+    place-items: center;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+.mermaid-status {
+    display: none;
+}
+
+.js .mermaid-status {
+    display: grid;
+}
+
+.mermaid-status[hidden] {
+    display: none;
+}
+
+.mermaid-host[data-mermaid-state="error"] .mermaid-status {
+    color: var(--cyan);
 }
 
 .mermaid-runtime {
@@ -641,7 +661,7 @@ h3 {
 }
 
 .diagram-pan-hint,
-.architecture-open {
+.architecture-source {
     padding: 0.45rem 0.65rem;
     color: var(--ink);
     font-family: var(--font-mono);
@@ -659,17 +679,17 @@ h3 {
     transition: opacity 160ms ease, visibility 160ms ease;
 }
 
-.mermaid-host.is-scrollable:not(.is-panned) ~ .diagram-controls .diagram-pan-hint {
+.mermaid-host[data-mermaid-state="rendered"].is-scrollable:not(.is-panned) ~ .diagram-controls .diagram-pan-hint {
     opacity: 1;
     visibility: visible;
 }
 
-.architecture-open {
+.architecture-source {
     background: var(--signal);
     transition: transform 160ms ease;
 }
 
-.architecture-open:hover {
+.architecture-source:hover {
     transform: translate(-2px, -2px);
 }
 

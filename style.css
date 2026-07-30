@@ -565,6 +565,7 @@ h3 {
 
 .mermaid-host::-webkit-scrollbar {
     height: 0.55rem;
+    width: 0.55rem;
 }
 
 .mermaid-host::-webkit-scrollbar-track {
@@ -595,8 +596,15 @@ h3 {
 }
 
 .diagram-pi {
-    --diagram-min-width: 880px;
-    --diagram-ratio: 2.01;
+    --diagram-min-width: 530px;
+    --diagram-ratio: 0.46;
+    max-height: 620px;
+    overflow-y: auto;
+}
+
+.diagram-pi .mermaid-canvas {
+    width: var(--diagram-min-width);
+    margin-inline: auto;
 }
 
 .mermaid-status,

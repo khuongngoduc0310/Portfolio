@@ -44,12 +44,13 @@ const loadMermaid = () => {
 };
 
 const updateScrollability = host => {
-    const scrollable = host.scrollWidth - host.clientWidth > 2;
+    const scrollable = host.scrollWidth - host.clientWidth > 2 || host.scrollHeight - host.clientHeight > 2;
     host.classList.toggle('is-scrollable', scrollable);
 
     if (!scrollable) {
         host.classList.remove('is-panned');
         host.scrollLeft = 0;
+        host.scrollTop = 0;
     }
 };
 
@@ -109,7 +110,7 @@ const scheduleRender = host => {
 diagramHosts.forEach(host => {
     updateScrollability(host);
     host.addEventListener('scroll', () => {
-        if (Math.abs(host.scrollLeft) > 8) host.classList.add('is-panned');
+        if (Math.abs(host.scrollLeft) > 8 || host.scrollTop > 8) host.classList.add('is-panned');
     }, { passive: true });
 });
 

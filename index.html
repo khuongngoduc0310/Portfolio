@@ -26,7 +26,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=20260806">
 
     <script type="application/ld+json">
     {
@@ -60,8 +60,13 @@
                 <a class="brand" href="#top" aria-label="Khuong Ngo, back to top">
                     <span aria-hidden="true">K/N</span>
                 </a>
-                <ul class="nav-links">
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-links">
+                    <span class="nav-toggle-icon" aria-hidden="true"></span>
+                    <span class="nav-toggle-label">Menu</span>
+                </button>
+                <ul class="nav-links" id="primary-links">
                     <li><a href="#work">Work</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -163,21 +168,28 @@
                                 <span>PRIVACY: LOCAL</span>
                             </div>
                             <img src="assets/meet_summarizer.png" width="2511" height="1320" loading="lazy" decoding="async" alt="MeetSummarizer video meeting interface with summary and transcript controls">
+                            <p class="media-caption">Live captions and meeting controls in the Electron client.</p>
                         </div>
-                        <div class="project-media architecture-media">
-                            <div class="architecture-frame">
-                                <section class="mermaid-host diagram-meet" data-mermaid-source="assets/projects/diagrams/meetsummarizer-system-overview.mmd" data-mermaid-state="idle" tabindex="0" aria-label="MeetSummarizer architecture connecting the Electron main process and React interface to native or WebGPU speech transcription, Express, Socket.io, and PostgreSQL. Scroll horizontally to inspect the complete diagram.">
-                                    <div class="mermaid-canvas">
-                                        <p class="mermaid-status" role="status">Loading diagram from Mermaid...</p>
-                                        <noscript><p class="mermaid-noscript">JavaScript is required to render this Mermaid diagram.</p></noscript>
+                        <div class="system-snapshot" aria-label="MeetSummarizer system overview">
+                            <span>Capture audio</span><span aria-hidden="true">&#8594;</span><span>Transcribe locally</span><span aria-hidden="true">&#8594;</span><span>Caption and summarize</span>
+                        </div>
+                        <details class="architecture-details">
+                            <summary>Architecture details <span aria-hidden="true">&#8595;</span></summary>
+                            <div class="project-media architecture-media">
+                                <div class="architecture-frame">
+                                    <section class="mermaid-host diagram-meet" data-mermaid-source="assets/projects/diagrams/meetsummarizer-system-overview.mmd" data-mermaid-state="idle" tabindex="0" aria-label="MeetSummarizer architecture connecting the Electron main process and React interface to native or WebGPU speech transcription, Express, Socket.io, and PostgreSQL. Scroll horizontally to inspect the complete diagram.">
+                                        <div class="mermaid-canvas">
+                                            <p class="mermaid-status" role="status">Loading diagram from Mermaid...</p>
+                                            <noscript><p class="mermaid-noscript">JavaScript is required to render this Mermaid diagram.</p></noscript>
+                                        </div>
+                                    </section>
+                                    <div class="diagram-controls">
+                                        <span class="diagram-pan-hint" aria-hidden="true">Pan to inspect &#8596;</span>
+                                        <a class="architecture-source" href="assets/projects/diagrams/meetsummarizer-system-overview.mmd" target="_blank" rel="noopener">View Mermaid source &#8599;</a>
                                     </div>
-                                </section>
-                                <div class="diagram-controls">
-                                    <span class="diagram-pan-hint" aria-hidden="true">Pan to inspect &#8596;</span>
-                                    <a class="architecture-source" href="assets/projects/diagrams/meetsummarizer-system-overview.mmd" target="_blank" rel="noopener">View Mermaid source &#8599;</a>
                                 </div>
                             </div>
-                        </div>
+                        </details>
                     </div>
                     <div class="project-copy">
                         <div class="project-meta">
@@ -186,6 +198,7 @@
                         </div>
                         <h3 id="meet-title">MeetSummarizer</h3>
                         <p class="project-lead">Private, real-time meeting transcription without sending raw audio to the cloud.</p>
+                        <p class="project-result"><span>Result</span> Local-first transcription with live peer media and AI-generated summaries.</p>
                         <p>Built an on-device speech-to-text pipeline around Whisper inference, overlapping audio windows, and peer-to-peer WebRTC media. The architecture keeps raw audio local while still supporting live captions and AI-generated meeting summaries.</p>
                         <dl class="project-facts">
                             <div>
@@ -223,21 +236,28 @@
                                 <span>GENETIC AGENT</span>
                             </div>
                             <img src="assets/flappy_bird_ai.png" width="1867" height="871" loading="lazy" decoding="async" alt="Flappy Bird neural-network training interface with evolution controls and live fitness chart">
+                            <p class="media-caption">Fitness, population, and mutation controls exposed in the training interface.</p>
                         </div>
-                        <div class="project-media architecture-media">
-                            <div class="architecture-frame">
-                                <section class="mermaid-host diagram-flappy" data-mermaid-source="assets/projects/diagrams/flappy-ai-evolution-loop.mmd" data-mermaid-state="idle" tabindex="0" aria-label="Flappy Bird neuroevolution loop from random neural-network weights through simulation, fitness evaluation, top-five-percent selection, mutation, and elitism. Scroll horizontally to inspect the complete diagram.">
-                                    <div class="mermaid-canvas">
-                                        <p class="mermaid-status" role="status">Loading diagram from Mermaid...</p>
-                                        <noscript><p class="mermaid-noscript">JavaScript is required to render this Mermaid diagram.</p></noscript>
+                        <div class="system-snapshot system-snapshot-cyan" aria-label="Flappy Bird AI system overview">
+                            <span>Simulate agents</span><span aria-hidden="true">&#8594;</span><span>Score fitness</span><span aria-hidden="true">&#8594;</span><span>Mutate next generation</span>
+                        </div>
+                        <details class="architecture-details">
+                            <summary>Architecture details <span aria-hidden="true">&#8595;</span></summary>
+                            <div class="project-media architecture-media">
+                                <div class="architecture-frame">
+                                    <section class="mermaid-host diagram-flappy" data-mermaid-source="assets/projects/diagrams/flappy-ai-evolution-loop.mmd" data-mermaid-state="idle" tabindex="0" aria-label="Flappy Bird neuroevolution loop from random neural-network weights through simulation, fitness evaluation, top-five-percent selection, mutation, and elitism. Scroll horizontally to inspect the complete diagram.">
+                                        <div class="mermaid-canvas">
+                                            <p class="mermaid-status" role="status">Loading diagram from Mermaid...</p>
+                                            <noscript><p class="mermaid-noscript">JavaScript is required to render this Mermaid diagram.</p></noscript>
+                                        </div>
+                                    </section>
+                                    <div class="diagram-controls">
+                                        <span class="diagram-pan-hint" aria-hidden="true">Pan to inspect &#8596;</span>
+                                        <a class="architecture-source" href="assets/projects/diagrams/flappy-ai-evolution-loop.mmd" target="_blank" rel="noopener">View Mermaid source &#8599;</a>
                                     </div>
-                                </section>
-                                <div class="diagram-controls">
-                                    <span class="diagram-pan-hint" aria-hidden="true">Pan to inspect &#8596;</span>
-                                    <a class="architecture-source" href="assets/projects/diagrams/flappy-ai-evolution-loop.mmd" target="_blank" rel="noopener">View Mermaid source &#8599;</a>
                                 </div>
                             </div>
-                        </div>
+                        </details>
                     </div>
                     <div class="project-copy">
                         <div class="project-meta">
@@ -246,6 +266,7 @@
                         </div>
                         <h3 id="flappy-title">Flappy Bird AI</h3>
                         <p class="project-lead">An autonomous game agent that learns through neuroevolution.</p>
+                        <p class="project-result"><span>Result</span> Stable agents across randomized obstacle patterns.</p>
                         <p>Developed a browser-based simulation where populations of neural-network agents evolve against randomized obstacles. Configurable controls make mutation, population size, and network architecture visible and testable.</p>
                         <dl class="project-facts">
                             <div>
@@ -276,20 +297,26 @@
 
                 <article class="project reveal" aria-labelledby="orchestrator-title">
                     <div class="project-visuals">
-                        <div class="project-media architecture-media">
-                            <div class="architecture-frame">
-                                <section class="mermaid-host diagram-pi" data-mermaid-source="assets/projects/diagrams/piorchestrator-workflow.mmd" data-mermaid-state="idle" tabindex="0" aria-label="piOrchestrator workflow branching from plan review into read-only reporting or guarded mutation, saved checks, bounded review fixes, and checkpoint finalization. Scroll to inspect the complete diagram.">
-                                    <div class="mermaid-canvas">
-                                        <p class="mermaid-status" role="status">Loading diagram from Mermaid...</p>
-                                        <noscript><p class="mermaid-noscript">JavaScript is required to render this Mermaid diagram.</p></noscript>
+                        <div class="system-snapshot system-snapshot-blue" aria-label="piOrchestrator system overview">
+                            <span>Review plan</span><span aria-hidden="true">&#8594;</span><span>Guard execution</span><span aria-hidden="true">&#8594;</span><span>Checkpoint results</span>
+                        </div>
+                        <details class="architecture-details">
+                            <summary>Architecture details <span aria-hidden="true">&#8595;</span></summary>
+                            <div class="project-media architecture-media">
+                                <div class="architecture-frame">
+                                    <section class="mermaid-host diagram-pi" data-mermaid-source="assets/projects/diagrams/piorchestrator-workflow.mmd" data-mermaid-state="idle" tabindex="0" aria-label="piOrchestrator workflow branching from plan review into read-only reporting or guarded mutation, saved checks, bounded review fixes, and checkpoint finalization. Scroll to inspect the complete diagram.">
+                                        <div class="mermaid-canvas">
+                                            <p class="mermaid-status" role="status">Loading diagram from Mermaid...</p>
+                                            <noscript><p class="mermaid-noscript">JavaScript is required to render this Mermaid diagram.</p></noscript>
+                                        </div>
+                                    </section>
+                                    <div class="diagram-controls">
+                                        <span class="diagram-pan-hint" aria-hidden="true">Scroll to inspect &#8597;</span>
+                                        <a class="architecture-source" href="assets/projects/diagrams/piorchestrator-workflow.mmd" target="_blank" rel="noopener">View Mermaid source &#8599;</a>
                                     </div>
-                                </section>
-                                <div class="diagram-controls">
-                                    <span class="diagram-pan-hint" aria-hidden="true">Scroll to inspect &#8597;</span>
-                                    <a class="architecture-source" href="assets/projects/diagrams/piorchestrator-workflow.mmd" target="_blank" rel="noopener">View Mermaid source &#8599;</a>
                                 </div>
                             </div>
-                        </div>
+                        </details>
                     </div>
                     <div class="project-copy">
                         <div class="project-meta">
@@ -298,6 +325,7 @@
                         </div>
                         <h3 id="orchestrator-title">piOrchestrator</h3>
                         <p class="project-lead">A deterministic workflow controller that keeps multi-agent coding tasks reviewable, resumable, and bounded.</p>
+                        <p class="project-result"><span>Result</span> Eight workflow routes with resumable checkpoints and live execution observability.</p>
                         <p>Built a Pi coding-agent extension that coordinates specialized agents through centrally owned workflow transitions. It validates structured outputs, restricts role capabilities, gates mutations behind green checks, isolates changes in Git worktrees, and persists checkpoints for safe recovery.</p>
                         <dl class="project-facts">
                             <div>
@@ -329,10 +357,37 @@
             </div>
         </section>
 
+        <section class="blog-section" id="blog" aria-labelledby="blog-title">
+            <div class="container">
+                <header class="section-heading reveal">
+                    <p class="section-kicker">02 / Build notes</p>
+                    <h2 id="blog-title">Writing from the work.</h2>
+                    <p>Short notes on the constraints, tradeoffs, and systems behind the projects above.</p>
+                </header>
+                <div class="blog-list reveal">
+                    <article class="blog-entry">
+                        <div class="blog-meta">
+                            <time datetime="2026-08">Aug 2026</time>
+                            <span class="tag-badge">Systems &amp; AI</span>
+                            <span>3 min read</span>
+                        </div>
+                        <div>
+                            <h3><a href="blog/whisper-gpu-inference.html">From Whisper Cold Starts to Native GPU Inference</a></h3>
+                            <p>How refactoring from process-per-chunk CLI execution to persistent HTTP sidecars and Koffi FFI Vulkan bindings cut caption lag by 2.7x and unlocked 259x real-time GPU inference.</p>
+                        </div>
+                        <a class="blog-link" href="blog/whisper-gpu-inference.html">Read full essay <span aria-hidden="true">&#8594;</span></a>
+                    </article>
+                </div>
+                <div class="blog-footer-cta reveal">
+                    <a class="button button-primary" href="blog.html">Browse all writing <span aria-hidden="true">&#8594;</span></a>
+                </div>
+            </div>
+        </section>
+
         <section class="about-section" id="about" aria-labelledby="about-title">
             <div class="container about-layout">
                 <header class="section-heading section-heading-light reveal">
-                    <p class="section-kicker">02 / About</p>
+                    <p class="section-kicker">03 / About</p>
                     <h2 id="about-title">I care about what happens beneath the interface.</h2>
                 </header>
                 <div class="about-copy reveal">
@@ -367,7 +422,7 @@
         <section class="skills-section" id="skills" aria-labelledby="skills-title">
             <div class="container">
                 <header class="section-heading reveal">
-                    <p class="section-kicker">03 / Capabilities</p>
+                    <p class="section-kicker">04 / Capabilities</p>
                     <h2 id="skills-title">A systems-minded toolkit.</h2>
                     <p>Technologies I have used to take projects from architecture to working software.</p>
                 </header>
@@ -424,7 +479,7 @@
         <section class="contact-section" id="contact" aria-labelledby="contact-title">
             <div class="container contact-layout reveal">
                 <div>
-                    <p class="section-kicker">04 / Contact</p>
+                    <p class="section-kicker">05 / Contact</p>
                     <h2 id="contact-title">Let's build software that holds up.</h2>
                 </div>
                 <div class="contact-copy">
@@ -448,7 +503,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
-    <script type="module" src="diagrams.js"></script>
+    <script src="script.js?v=20260806"></script>
+    <script type="module" src="diagrams.js?v=20260806"></script>
 </body>
 </html>

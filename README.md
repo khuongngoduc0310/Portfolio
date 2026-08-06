@@ -12,7 +12,8 @@ python -m http.server 8000
 
 ## Structure
 
-- `index.html` contains the page content and metadata.
+- `index.html` contains the portfolio page content and metadata.
+- `blog.html` is the blog index, and `blog/` contains individual articles.
 - `style.css` contains the visual system and responsive behavior.
 - `script.js` progressively enhances section reveals.
 - `diagrams.js` lazily renders project diagrams in the browser with Mermaid 11.16.0.
@@ -21,6 +22,12 @@ python -m http.server 8000
 - `resume2.pdf` is the public resume linked from the site.
 
 Runtime diagram rendering fetches local `.mmd` files and loads Mermaid from jsDelivr, so local previews must use an HTTP server rather than opening `index.html` directly.
+
+## Adding a blog post
+
+1. Copy `blog/whisper-gpu-inference.html` to `blog/<slug>.html` and update its metadata, structured data, article content, and relative links.
+2. Add an article card to `blog.html` and link to the new slug.
+3. Add the article's canonical URL to `sitemap.xml`.
 
 ## Deployment
 

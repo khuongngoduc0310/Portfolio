@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From Whisper Cold Starts to Native GPU Inference | Khuong "Kyle" Ngo</title>
+    <meta name="description" content="How persistent Whisper processes and native Vulkan inference cut offline transcription time by 2.7x.">
+    <meta name="theme-color" content="#f3f1eb">
+    <link rel="canonical" href="https://khuongngoduc0310.github.io/Portfolio/blog/whisper-gpu-inference.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="From Whisper Cold Starts to Native GPU Inference | Khuong 'Kyle' Ngo">
+    <meta property="og:description" content="How persistent Whisper processes and native Vulkan inference cut offline transcription time by 2.7x.">
+    <meta property="og:url" content="https://khuongngoduc0310.github.io/Portfolio/blog/whisper-gpu-inference.html">
+    <meta property="og:image" content="https://khuongngoduc0310.github.io/Portfolio/assets/social-preview.png">
+    <meta property="og:image:alt" content="Khuong Kyle Ngo, software engineer portfolio">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="From Whisper Cold Starts to Native GPU Inference | Khuong 'Kyle' Ngo">
+    <meta name="twitter:description" content="How persistent Whisper processes and native Vulkan inference cut offline transcription time by 2.7x.">
+    <meta name="twitter:image" content="https://khuongngoduc0310.github.io/Portfolio/assets/social-preview.png">
+
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="../style.css?v=20260806">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "From Whisper Cold Starts to Native GPU Inference",
+        "description": "How persistent Whisper processes and native Vulkan inference cut offline transcription time by 2.7x.",
+        "datePublished": "2026-08-01",
+        "dateModified": "2026-08-01",
+        "author": {
+            "@type": "Person",
+            "name": "Khuong Ngo",
+            "url": "https://khuongngoduc0310.github.io/Portfolio/"
+        },
+        "mainEntityOfPage": "https://khuongngoduc0310.github.io/Portfolio/blog/whisper-gpu-inference.html",
+        "image": "https://khuongngoduc0310.github.io/Portfolio/assets/social-preview.png"
+    }
+    </script>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+        <div class="container">
+            <nav class="site-nav" aria-label="Primary navigation">
+                <a class="brand" href="../index.html" aria-label="Khuong Ngo home">
+                    <span aria-hidden="true">K/N</span>
+                </a>
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-links">
+                    <span class="nav-toggle-icon" aria-hidden="true"></span>
+                    <span class="nav-toggle-label">Menu</span>
+                </button>
+                <ul class="nav-links" id="primary-links">
+                    <li><a href="../index.html#work">Work</a></li>
+                    <li><a href="../blog.html" aria-current="page">Blog</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#skills">Skills</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+                <a class="nav-resume" href="../resume2.pdf" download="Khuong-Kyle-Ngo-Resume.pdf">Resume <span aria-hidden="true">&#8599;</span></a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <article class="blog-article-section">
+            <div class="container">
+                <div class="blog-article reveal">
+                    <a class="article-back-link" href="../blog.html"><span aria-hidden="true">&#8592;</span> All writing</a>
+                    <header class="article-header">
+                        <div class="blog-meta">
+                            <time datetime="2026-08-01">August 2026</time>
+                            <span class="tag-badge">Systems &amp; AI Engineering</span>
+                            <span>3 min read</span>
+                        </div>
+                        <h1>From Whisper Cold Starts to Native GPU Inference</h1>
+                        <p class="article-lead">How persistent Whisper processes and native Vulkan inference cut offline transcription time by 2.7x.</p>
+                    </header>
+
+                    <div class="article-body">
+                        <p>Real-time captions used to launch <code>whisper-cli</code> for every transcription window. Each run started a process, reloaded the model, wrote a WAV file, and returned a result. That overhead made captions slower than the speech recognition itself needed to be.</p>
+
+                        <h2>The bottleneck was startup work</h2>
+                        <p>The first change replaced process-per-chunk execution with a persistent <code>whisper-server</code> sidecar. The model loaded once when the sidecar started, then the app sent in-memory WAV audio to a local HTTP endpoint for each inference. The CLI path remained available when the server was unavailable.</p>
+
+                        <dl class="article-metrics">
+                            <div>
+                                <dt>Median caption lag</dt>
+                                <dd>936 ms <span aria-hidden="true">&#8594;</span> 686 ms</dd>
+                            </div>
+                            <div>
+                                <dt>CPU improvement</dt>
+                                <dd>27%</dd>
+                            </div>
+                        </dl>
+
+                        <p>Removing repeated startup and model loading reduced median caption lag on the CPU base-model benchmark by 27%, while audio-buffer flushing continued to avoid uncovered audio and buffer overflows.</p>
+
+                        <h2>Remove the process boundary</h2>
+                        <p>The next step removed the HTTP boundary altogether. The Electron sidecar uses Koffi FFI to load <code>whisper.dll</code> directly, keeping the model loaded in the native Whisper context and passing floating-point PCM directly to Whisper. This path includes Vulkan GPU inference.</p>
+
+                        <h2>Measure the end-to-end result</h2>
+                        <p>The first Vulkan measurement on an RTX 3060 Ti transcribed 30 seconds of audio in 115 ms, or about 259x faster than real time for raw steady-state inference. The end-to-end comparison is the more useful number: the native FFI Vulkan path completed offline transcription in 1,044 ms versus 2,824 ms for the CLI.</p>
+
+                        <dl class="article-metrics">
+                            <div>
+                                <dt>Offline transcription</dt>
+                                <dd>2,824 ms <span aria-hidden="true">&#8594;</span> 1,044 ms</dd>
+                            </div>
+                            <div>
+                                <dt>End-to-end improvement</dt>
+                                <dd>2.7x faster</dd>
+                            </div>
+                        </dl>
+
+                        <h2>Keep the model ready</h2>
+                        <p>The architecture changed from <em>“start Whisper for every caption”</em> to <em>“keep Whisper loaded and ready.”</em> The result is lower caption lag, less CPU and disk overhead, and a path to native GPU transcription without changing the meeting app’s caption protocol.</p>
+
+                        <p class="article-source">Project context: <a href="https://github.com/khuongngoduc0310/SummarizerApp">MeetSummarizer source</a></p>
+                    </div>
+
+                    <aside class="more-writing" aria-labelledby="more-writing-title">
+                        <p class="section-kicker">More writing</p>
+                        <h2 id="more-writing-title">More build notes are on the way.</h2>
+                        <a class="blog-link" href="../blog.html">Browse all writing <span aria-hidden="true">&#8594;</span></a>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-layout">
+            <p>Khuong "Kyle" Ngo</p>
+            <p>Software engineer / Recent CS graduate</p>
+            <p>&copy; 2026</p>
+        </div>
+    </footer>
+
+    <script src="../script.js?v=20260806"></script>
+</body>
+</html>

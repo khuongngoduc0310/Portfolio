@@ -170,26 +170,34 @@
                             <img src="assets/meet_summarizer.png" width="2511" height="1320" loading="lazy" decoding="async" alt="MeetSummarizer video meeting interface with summary and transcript controls">
                             <p class="media-caption">Live captions and meeting controls in the Electron client.</p>
                         </div>
-                        <div class="system-snapshot" aria-label="MeetSummarizer system overview">
+                        <div class="system-snapshot">
                             <span>Capture audio</span><span aria-hidden="true">&#8594;</span><span>Transcribe locally</span><span aria-hidden="true">&#8594;</span><span>Caption and summarize</span>
                         </div>
-                        <details class="architecture-details">
-                            <summary>Architecture details <span aria-hidden="true">&#8595;</span></summary>
-                            <div class="project-media architecture-media">
-                                <div class="architecture-frame">
-                                    <section class="mermaid-host diagram-meet" data-mermaid-source="assets/projects/diagrams/meetsummarizer-system-overview.mmd" data-mermaid-state="idle" tabindex="0" aria-label="MeetSummarizer architecture connecting the Electron main process and React interface to native or WebGPU speech transcription, Express, Socket.io, and PostgreSQL. Scroll horizontally to inspect the complete diagram.">
-                                        <div class="mermaid-canvas">
-                                            <p class="mermaid-status" role="status">Loading diagram from Mermaid...</p>
-                                            <noscript><p class="mermaid-noscript">JavaScript is required to render this Mermaid diagram.</p></noscript>
+                        <button class="architecture-trigger" type="button" data-diagram-dialog="meet-architecture-dialog" aria-haspopup="dialog" aria-controls="meet-architecture-dialog">Architecture details <span aria-hidden="true">&#8599;</span></button>
+                        <dialog class="diagram-dialog" id="meet-architecture-dialog" aria-labelledby="meet-architecture-title">
+                            <div class="diagram-dialog-shell">
+                                <header class="diagram-dialog-header">
+                                    <h4 id="meet-architecture-title">MeetSummarizer architecture</h4>
+                                    <form method="dialog">
+                                        <button class="diagram-dialog-close" type="submit"><span aria-hidden="true">&#215;</span><span class="visually-hidden">Close architecture details</span></button>
+                                    </form>
+                                </header>
+                                <div class="project-media architecture-media">
+                                    <div class="architecture-frame">
+                                        <section class="mermaid-host diagram-meet" data-mermaid-source="assets/projects/diagrams/meetsummarizer-system-overview.mmd" data-mermaid-state="idle" tabindex="0" aria-label="MeetSummarizer architecture connecting the Electron main process and React interface to native or WebGPU speech transcription, Express, Socket.io, and PostgreSQL. Scroll horizontally to inspect the complete diagram.">
+                                            <div class="mermaid-canvas">
+                                                <p class="mermaid-status" role="status">Loading diagram from Mermaid...</p>
+                                                <noscript><p class="mermaid-noscript">JavaScript is required to render this Mermaid diagram.</p></noscript>
+                                            </div>
+                                        </section>
+                                        <div class="diagram-controls">
+                                            <span class="diagram-pan-hint" aria-hidden="true">Pan to inspect &#8596;</span>
+                                            <a class="architecture-source" href="assets/projects/diagrams/meetsummarizer-system-overview.mmd" target="_blank" rel="noopener">View Mermaid source &#8599;</a>
                                         </div>
-                                    </section>
-                                    <div class="diagram-controls">
-                                        <span class="diagram-pan-hint" aria-hidden="true">Pan to inspect &#8596;</span>
-                                        <a class="architecture-source" href="assets/projects/diagrams/meetsummarizer-system-overview.mmd" target="_blank" rel="noopener">View Mermaid source &#8599;</a>
                                     </div>
                                 </div>
                             </div>
-                        </details>
+                        </dialog>
                     </div>
                     <div class="project-copy">
                         <div class="project-meta">
@@ -238,26 +246,34 @@
                             <img src="assets/flappy_bird_ai.png" width="1867" height="871" loading="lazy" decoding="async" alt="Flappy Bird neural-network training interface with evolution controls and live fitness chart">
                             <p class="media-caption">Fitness, population, and mutation controls exposed in the training interface.</p>
                         </div>
-                        <div class="system-snapshot system-snapshot-cyan" aria-label="Flappy Bird AI system overview">
+                        <div class="system-snapshot system-snapshot-cyan">
                             <span>Simulate agents</span><span aria-hidden="true">&#8594;</span><span>Score fitness</span><span aria-hidden="true">&#8594;</span><span>Mutate next generation</span>
                         </div>
-                        <details class="architecture-details">
-                            <summary>Architecture details <span aria-hidden="true">&#8595;</span></summary>
-                            <div class="project-media architecture-media">
-                                <div class="architecture-frame">
-                                    <section class="mermaid-host diagram-flappy" data-mermaid-source="assets/projects/diagrams/flappy-ai-evolution-loop.mmd" data-mermaid-state="idle" tabindex="0" aria-label="Flappy Bird neuroevolution loop from random neural-network weights through simulation, fitness evaluation, top-five-percent selection, mutation, and elitism. Scroll horizontally to inspect the complete diagram.">
-                                        <div class="mermaid-canvas">
-                                            <p class="mermaid-status" role="status">Loading diagram from Mermaid...</p>
-                                            <noscript><p class="mermaid-noscript">JavaScript is required to render this Mermaid diagram.</p></noscript>
+                        <button class="architecture-trigger" type="button" data-diagram-dialog="flappy-architecture-dialog" aria-haspopup="dialog" aria-controls="flappy-architecture-dialog">Architecture details <span aria-hidden="true">&#8599;</span></button>
+                        <dialog class="diagram-dialog" id="flappy-architecture-dialog" aria-labelledby="flappy-architecture-title">
+                            <div class="diagram-dialog-shell">
+                                <header class="diagram-dialog-header">
+                                    <h4 id="flappy-architecture-title">Flappy Bird AI architecture</h4>
+                                    <form method="dialog">
+                                        <button class="diagram-dialog-close" type="submit"><span aria-hidden="true">&#215;</span><span class="visually-hidden">Close architecture details</span></button>
+                                    </form>
+                                </header>
+                                <div class="project-media architecture-media">
+                                    <div class="architecture-frame">
+                                        <section class="mermaid-host diagram-flappy" data-mermaid-source="assets/projects/diagrams/flappy-ai-evolution-loop.mmd" data-mermaid-state="idle" tabindex="0" aria-label="Flappy Bird neuroevolution loop from random neural-network weights through simulation, fitness evaluation, top-five-percent selection, mutation, and elitism. Scroll horizontally to inspect the complete diagram.">
+                                            <div class="mermaid-canvas">
+                                                <p class="mermaid-status" role="status">Loading diagram from Mermaid...</p>
+                                                <noscript><p class="mermaid-noscript">JavaScript is required to render this Mermaid diagram.</p></noscript>
+                                            </div>
+                                        </section>
+                                        <div class="diagram-controls">
+                                            <span class="diagram-pan-hint" aria-hidden="true">Pan to inspect &#8596;</span>
+                                            <a class="architecture-source" href="assets/projects/diagrams/flappy-ai-evolution-loop.mmd" target="_blank" rel="noopener">View Mermaid source &#8599;</a>
                                         </div>
-                                    </section>
-                                    <div class="diagram-controls">
-                                        <span class="diagram-pan-hint" aria-hidden="true">Pan to inspect &#8596;</span>
-                                        <a class="architecture-source" href="assets/projects/diagrams/flappy-ai-evolution-loop.mmd" target="_blank" rel="noopener">View Mermaid source &#8599;</a>
                                     </div>
                                 </div>
                             </div>
-                        </details>
+                        </dialog>
                     </div>
                     <div class="project-copy">
                         <div class="project-meta">
@@ -297,26 +313,34 @@
 
                 <article class="project reveal" aria-labelledby="orchestrator-title">
                     <div class="project-visuals">
-                        <div class="system-snapshot system-snapshot-blue" aria-label="piOrchestrator system overview">
+                        <div class="system-snapshot system-snapshot-blue">
                             <span>Review plan</span><span aria-hidden="true">&#8594;</span><span>Guard execution</span><span aria-hidden="true">&#8594;</span><span>Checkpoint results</span>
                         </div>
-                        <details class="architecture-details">
-                            <summary>Architecture details <span aria-hidden="true">&#8595;</span></summary>
-                            <div class="project-media architecture-media">
-                                <div class="architecture-frame">
-                                    <section class="mermaid-host diagram-pi" data-mermaid-source="assets/projects/diagrams/piorchestrator-workflow.mmd" data-mermaid-state="idle" tabindex="0" aria-label="piOrchestrator workflow branching from plan review into read-only reporting or guarded mutation, saved checks, bounded review fixes, and checkpoint finalization. Scroll to inspect the complete diagram.">
-                                        <div class="mermaid-canvas">
-                                            <p class="mermaid-status" role="status">Loading diagram from Mermaid...</p>
-                                            <noscript><p class="mermaid-noscript">JavaScript is required to render this Mermaid diagram.</p></noscript>
+                        <button class="architecture-trigger" type="button" data-diagram-dialog="orchestrator-architecture-dialog" aria-haspopup="dialog" aria-controls="orchestrator-architecture-dialog">Architecture details <span aria-hidden="true">&#8599;</span></button>
+                        <dialog class="diagram-dialog" id="orchestrator-architecture-dialog" aria-labelledby="orchestrator-architecture-title">
+                            <div class="diagram-dialog-shell">
+                                <header class="diagram-dialog-header">
+                                    <h4 id="orchestrator-architecture-title">piOrchestrator architecture</h4>
+                                    <form method="dialog">
+                                        <button class="diagram-dialog-close" type="submit"><span aria-hidden="true">&#215;</span><span class="visually-hidden">Close architecture details</span></button>
+                                    </form>
+                                </header>
+                                <div class="project-media architecture-media">
+                                    <div class="architecture-frame">
+                                        <section class="mermaid-host diagram-pi" data-mermaid-source="assets/projects/diagrams/piorchestrator-workflow.mmd" data-mermaid-state="idle" tabindex="0" aria-label="piOrchestrator workflow branching from plan review into read-only reporting or guarded mutation, saved checks, bounded review fixes, and checkpoint finalization. Scroll to inspect the complete diagram.">
+                                            <div class="mermaid-canvas">
+                                                <p class="mermaid-status" role="status">Loading diagram from Mermaid...</p>
+                                                <noscript><p class="mermaid-noscript">JavaScript is required to render this Mermaid diagram.</p></noscript>
+                                            </div>
+                                        </section>
+                                        <div class="diagram-controls">
+                                            <span class="diagram-pan-hint" aria-hidden="true">Scroll to inspect &#8597;</span>
+                                            <a class="architecture-source" href="assets/projects/diagrams/piorchestrator-workflow.mmd" target="_blank" rel="noopener">View Mermaid source &#8599;</a>
                                         </div>
-                                    </section>
-                                    <div class="diagram-controls">
-                                        <span class="diagram-pan-hint" aria-hidden="true">Scroll to inspect &#8597;</span>
-                                        <a class="architecture-source" href="assets/projects/diagrams/piorchestrator-workflow.mmd" target="_blank" rel="noopener">View Mermaid source &#8599;</a>
                                     </div>
                                 </div>
                             </div>
-                        </details>
+                        </dialog>
                     </div>
                     <div class="project-copy">
                         <div class="project-meta">
@@ -503,7 +527,7 @@
         </div>
     </footer>
 
-    <script src="script.js?v=20260806"></script>
-    <script type="module" src="diagrams.js?v=20260806"></script>
+    <script src="script.js?v=20260806b"></script>
+    <script type="module" src="diagrams.js?v=20260806b"></script>
 </body>
 </html>

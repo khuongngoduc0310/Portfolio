@@ -20,6 +20,21 @@ if (siteNav && navToggle) {
         if (event.key === 'Escape') closeMenu();
     });
 }
+
+document.querySelectorAll('[data-diagram-dialog]').forEach(trigger => {
+    const dialog = document.getElementById(trigger.dataset.diagramDialog);
+
+    if (!dialog || typeof dialog.showModal !== 'function') return;
+
+    trigger.addEventListener('click', () => {
+        if (!dialog.open) dialog.showModal();
+
+        document.dispatchEvent(new CustomEvent('diagramdialogopen', { detail: dialog }));
+    });
+
+    dialog.addEventListener('close', () => trigger.focus());
+});
+
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const revealItems = document.querySelectorAll('.reveal');
 

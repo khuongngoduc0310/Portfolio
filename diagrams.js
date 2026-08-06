@@ -104,8 +104,15 @@ const renderDiagram = async host => {
 };
 
 const scheduleRender = host => {
+    if (host.dataset.mermaidState !== 'idle') return;
+
+    host.dataset.mermaidState = 'queued';
     renderQueue = renderQueue.then(() => renderDiagram(host));
 };
+
+document.addEventListener('diagramdialogopen', event => {
+    event.detail.querySelectorAll('[data-mermaid-source]').forEach(scheduleRender);
+});
 
 diagramHosts.forEach(host => {
     updateScrollability(host);

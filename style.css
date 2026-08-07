@@ -656,9 +656,9 @@ h3 {
 }
 
 .diagram-dialog {
-    width: min(calc(100% - 2rem), 80rem);
+    width: min(96vw, 100rem);
     max-width: none;
-    max-height: min(90svh, 58rem);
+    max-height: 94svh;
     padding: 0;
     overflow: hidden;
     border: 1px solid #30343d;
@@ -780,6 +780,21 @@ h3 {
 .diagram-pi .mermaid-canvas {
     width: var(--diagram-min-width);
     margin-inline: auto;
+}
+
+@media (min-width: 761px) {
+    .diagram-dialog .architecture-media {
+        overflow: visible;
+    }
+
+    .diagram-dialog .diagram-meet .mermaid-canvas,
+    .diagram-dialog .diagram-flappy .mermaid-canvas {
+        width: 100%;
+    }
+
+    .diagram-dialog .diagram-pi {
+        max-height: calc(94svh - 8rem);
+    }
 }
 
 .mermaid-status,
